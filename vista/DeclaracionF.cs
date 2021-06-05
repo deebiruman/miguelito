@@ -32,7 +32,7 @@ namespace Prototipo
         private void DeclaracionF_Load(object sender, EventArgs e)
         {
             // TODO: esta línea de código carga datos en la tabla 'declaracionDS.declaracion_fiscal' Puede moverla o quitarla según sea necesario.
-            this.declaracion_fiscalTableAdapter.Fill(this.declaracionDS.declaracion_fiscal);
+           // this.declaracion_fiscalTableAdapter.Fill(this.declaracionDS.declaracion_fiscal);
             // TODO: esta línea de código carga datos en la tabla 'miguelitoDataSet10.declaracion_fiscal' Puede moverla o quitarla según sea necesario.
             //     this.declaracion_fiscalTableAdapter1.Fill(this.miguelitoDataSet10.declaracion_fiscal);
             // TODO: esta línea de código carga datos en la tabla 'miguelitoDataSet6.declaracion_fiscal' Puede moverla o quitarla según sea necesario.
@@ -55,7 +55,7 @@ namespace Prototipo
             {
                 if (fecha_In.Value > fecha_Fn.Value)
                 {
-                    MessageBox.Show("Introduzca bien la fecha");
+                    val_fecha.Visible = true;
                 }
                 else
                 {
@@ -125,7 +125,7 @@ namespace Prototipo
         {
             if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
             {
-                MessageBox.Show("Solo se aceptan numeros");
+                val_id.Visible = true;
                 e.Handled = true;
                 return;
             }
@@ -163,8 +163,30 @@ namespace Prototipo
             }
             else
             {
-                MessageBox.Show("Longitud minima de 8");
+                long_id.Visible = true;
             }
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            string texto = textBox1.Text;
+            val_id.Visible = false;
+
+            if (Conexion.Minimo_validacion(texto, "MIN") == 1)
+            {
+                long_id.Visible = false;
+                
+            }
+        }
+
+        private void fecha_Fn_ValueChanged(object sender, EventArgs e)
+        {
+            if (fecha_Fn.Value > fecha_In.Value)
+            {
+                val_fecha.Visible = false;
+            }
+        }
+
+        
     }
 }

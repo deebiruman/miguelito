@@ -64,6 +64,9 @@
             this.dgvseguro_DX = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sello_digitalTableAdapter = new Prototipo.SelloDSTableAdapters.sello_digitalTableAdapter();
+            this.long_id = new System.Windows.Forms.Label();
+            this.val_fecha = new System.Windows.Forms.Label();
+            this.val_id = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.SelloDdgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sellodigitalBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.selloDS)).BeginInit();
@@ -95,6 +98,7 @@
             this.clientetxt.Name = "clientetxt";
             this.clientetxt.Size = new System.Drawing.Size(162, 22);
             this.clientetxt.TabIndex = 1;
+            this.clientetxt.TextChanged += new System.EventHandler(this.clientetxt_TextChanged);
             this.clientetxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.clientetxt_KeyPress);
             this.clientetxt.Leave += new System.EventHandler(this.clientetxt_Leave);
             // 
@@ -234,6 +238,7 @@
             this.fecha_Fn.Name = "fecha_Fn";
             this.fecha_Fn.Size = new System.Drawing.Size(162, 22);
             this.fecha_Fn.TabIndex = 3;
+            this.fecha_Fn.ValueChanged += new System.EventHandler(this.fecha_Fn_ValueChanged);
             // 
             // transparentPanel1
             // 
@@ -433,12 +438,51 @@
             // 
             this.sello_digitalTableAdapter.ClearBeforeFill = true;
             // 
+            // long_id
+            // 
+            this.long_id.AutoSize = true;
+            this.long_id.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.long_id.ForeColor = System.Drawing.Color.Red;
+            this.long_id.Location = new System.Drawing.Point(31, 213);
+            this.long_id.Name = "long_id";
+            this.long_id.Size = new System.Drawing.Size(135, 17);
+            this.long_id.TabIndex = 71;
+            this.long_id.Text = "Longitud mínima de 8";
+            this.long_id.Visible = false;
+            // 
+            // val_fecha
+            // 
+            this.val_fecha.AutoSize = true;
+            this.val_fecha.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.val_fecha.ForeColor = System.Drawing.Color.Red;
+            this.val_fecha.Location = new System.Drawing.Point(31, 364);
+            this.val_fecha.Name = "val_fecha";
+            this.val_fecha.Size = new System.Drawing.Size(147, 17);
+            this.val_fecha.TabIndex = 72;
+            this.val_fecha.Text = "Introduzca bien la fecha";
+            this.val_fecha.Visible = false;
+            // 
+            // val_id
+            // 
+            this.val_id.AutoSize = true;
+            this.val_id.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.val_id.ForeColor = System.Drawing.Color.Red;
+            this.val_id.Location = new System.Drawing.Point(31, 147);
+            this.val_id.Name = "val_id";
+            this.val_id.Size = new System.Drawing.Size(162, 17);
+            this.val_id.TabIndex = 77;
+            this.val_id.Text = "Sólo se permiten números";
+            this.val_id.Visible = false;
+            // 
             // SelloD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(726, 705);
+            this.Controls.Add(this.val_id);
+            this.Controls.Add(this.val_fecha);
+            this.Controls.Add(this.long_id);
             this.Controls.Add(this.dgvseguro_DX);
             this.Controls.Add(this.dgvseguro_D);
             this.Controls.Add(this.eliminarbtn);
@@ -505,5 +549,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.Label long_id;
+        private System.Windows.Forms.Label val_fecha;
+        private System.Windows.Forms.Label val_id;
     }
 }

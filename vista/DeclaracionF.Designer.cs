@@ -73,6 +73,9 @@
             this.idclientesDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.declaracion_fiscalTableAdapter = new Prototipo.DeclaracionDSTableAdapters.declaracion_fiscalTableAdapter();
+            this.long_id = new System.Windows.Forms.Label();
+            this.val_fecha = new System.Windows.Forms.Label();
+            this.val_id = new System.Windows.Forms.Label();
             this.transparentPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.declaracionFdgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.declaracionfiscalBindingSource)).BeginInit();
@@ -93,6 +96,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(160, 22);
             this.textBox1.TabIndex = 1;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             this.textBox1.Leave += new System.EventHandler(this.textBox1_Leave);
             // 
@@ -326,6 +330,7 @@
             this.fecha_Fn.Name = "fecha_Fn";
             this.fecha_Fn.Size = new System.Drawing.Size(160, 22);
             this.fecha_Fn.TabIndex = 3;
+            this.fecha_Fn.ValueChanged += new System.EventHandler(this.fecha_Fn_ValueChanged);
             // 
             // dospor
             // 
@@ -525,12 +530,51 @@
             // 
             this.declaracion_fiscalTableAdapter.ClearBeforeFill = true;
             // 
+            // long_id
+            // 
+            this.long_id.AutoSize = true;
+            this.long_id.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.long_id.ForeColor = System.Drawing.Color.Red;
+            this.long_id.Location = new System.Drawing.Point(31, 213);
+            this.long_id.Name = "long_id";
+            this.long_id.Size = new System.Drawing.Size(135, 17);
+            this.long_id.TabIndex = 69;
+            this.long_id.Text = "Longitud mínima de 8";
+            this.long_id.Visible = false;
+            // 
+            // val_fecha
+            // 
+            this.val_fecha.AutoSize = true;
+            this.val_fecha.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.val_fecha.ForeColor = System.Drawing.Color.Red;
+            this.val_fecha.Location = new System.Drawing.Point(33, 353);
+            this.val_fecha.Name = "val_fecha";
+            this.val_fecha.Size = new System.Drawing.Size(147, 17);
+            this.val_fecha.TabIndex = 75;
+            this.val_fecha.Text = "Introduzca bien la fecha";
+            this.val_fecha.Visible = false;
+            // 
+            // val_id
+            // 
+            this.val_id.AutoSize = true;
+            this.val_id.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.val_id.ForeColor = System.Drawing.Color.Red;
+            this.val_id.Location = new System.Drawing.Point(33, 147);
+            this.val_id.Name = "val_id";
+            this.val_id.Size = new System.Drawing.Size(162, 17);
+            this.val_id.TabIndex = 76;
+            this.val_id.Text = "Sólo se permiten números";
+            this.val_id.Visible = false;
+            // 
             // DeclaracionFform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(909, 854);
+            this.Controls.Add(this.val_id);
+            this.Controls.Add(this.val_fecha);
+            this.Controls.Add(this.long_id);
             this.Controls.Add(this.dgvdeclaracion_FX);
             this.Controls.Add(this.dgvdeclaracion_F);
             this.Controls.Add(this.eliminarbtn);
@@ -610,5 +654,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dospDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idclientesDataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn idclientesDataGridViewTextBoxColumn3;
+        private System.Windows.Forms.Label long_id;
+        private System.Windows.Forms.Label val_fecha;
+        private System.Windows.Forms.Label val_id;
     }
 }

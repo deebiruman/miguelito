@@ -120,6 +120,7 @@ namespace Prototipo
             {
                 if (Regex.IsMatch(texto, MIN))
                 {
+
                     return 1;
                 }
                 else
@@ -156,7 +157,7 @@ namespace Prototipo
         {
             try
             {
-                con = new SqlConnection(@"Data Source=DESKTOP-OLO6R1D;Initial Catalog=miguelito;Integrated Security=True");
+                con = new SqlConnection(@"Data Source=DESKTOP-5O2JMSK\MSQLSERVER19;Initial Catalog=miguelito;Integrated Security=True");
                 con.Open();
             }
             catch (Exception ex)

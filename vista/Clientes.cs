@@ -65,7 +65,7 @@ namespace Prototipo
         private void Clientes_Load(object sender, EventArgs e)
         {
             // TODO: esta línea de código carga datos en la tabla 'clientesDS.clientes' Puede moverla o quitarla según sea necesario.
-            this.clientesTableAdapter.Fill(this.clientesDS.clientes);
+        //    this.clientesTableAdapter.Fill(this.clientesDS.clientes);
             // TODO: esta línea de código carga datos en la tabla 'miguelitoDataSet1.clientes' Puede moverla o quitarla según sea necesario.
             //  this.clientesTableAdapter1.Fill(this.miguelitoDataSet1.clientes);
             // TODO: esta línea de código carga datos en la tabla 'miguelitoDataSet.clientes' Puede moverla o quitarla según sea necesario.
@@ -221,7 +221,7 @@ namespace Prototipo
         {
             if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
             {
-                MessageBox.Show("Solo se aceptan numeros");
+                val_id.Visible = true;
                 e.Handled = true;
                 return;
             }
@@ -231,7 +231,7 @@ namespace Prototipo
         {
             if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
             {
-                MessageBox.Show("Solo se aceptan numeros");
+                val_tel.Visible = true;
                 e.Handled = true;
                 return;
             }
@@ -291,7 +291,7 @@ namespace Prototipo
             }
             else
             {
-                MessageBox.Show("Correo no válido");
+                val_correo.Visible = true;
                 correotxt.SelectAll();
                 correotxt.Focus();
             }
@@ -308,7 +308,7 @@ namespace Prototipo
             }
             else
             {
-                MessageBox.Show("RFC no válido");
+                val_rfc.Visible = true;
                 rfctxt.SelectAll();
                 rfctxt.Focus();
             }
@@ -324,11 +324,12 @@ namespace Prototipo
             }
             else
             {
-                MessageBox.Show("CURP no válido");
+                val_curp.Visible = true;
                 curptxt.SelectAll();
                 curptxt.Focus();
             }
         }
+
 
         private void textBox1_Leave(object sender, EventArgs e)
         {
@@ -336,12 +337,14 @@ namespace Prototipo
 
             if (Conexion.Minimo_validacion(texto, "MIN") == 1)
             {
-                
+
             }
             else
             {
-                MessageBox.Show("Longitud minima de 8");
+                 long_id.Visible = true;
+
             }
+
         }
 
         private void textBox2_Leave(object sender, EventArgs e)
@@ -354,7 +357,7 @@ namespace Prototipo
             }
             else
             {
-                MessageBox.Show("Longitud minima de 8");
+                long_nom.Visible = true;
                 nombretxt.SelectAll();
                 nombretxt.Focus();
             }
@@ -370,7 +373,7 @@ namespace Prototipo
             }
             else
             {
-                MessageBox.Show("Longitud minima de 8");
+                long_dom.Visible = true;
                 domitxt.SelectAll();
                 domitxt.Focus();
             }
@@ -386,9 +389,85 @@ namespace Prototipo
             }
             else
             {
-                MessageBox.Show("Longitud minima de 10");
+                long_tel.Visible = true;
                 teletxt.SelectAll();
                 teletxt.Focus();
+            }
+        }
+
+
+        private void clientetxt_TextChanged(object sender, EventArgs e)
+        {
+            string texto = clientetxt.Text;
+            val_id.Visible = false;
+
+            if (Conexion.Minimo_validacion(texto, "MIN") == 1)
+            {
+                long_id.Visible = false;
+            }
+
+        }
+
+        private void nombretxt_TextChanged(object sender, EventArgs e)
+        {
+            string texto = nombretxt.Text;
+
+            if (Conexion.Minimo_validacion(texto, "MIN") == 1)
+            {
+                long_nom.Visible = false;
+            }
+        }
+
+        private void domitxt_TextChanged(object sender, EventArgs e)
+        {
+            string texto = domitxt.Text;
+
+            if (Conexion.Minimo_validacion(texto, "MIN") == 1)
+            {
+                long_dom.Visible = false;
+            }
+        }
+
+        private void teletxt_TextChanged(object sender, EventArgs e)
+        {
+            string texto = teletxt.Text;
+            val_tel.Visible = false;
+
+            if (Conexion.Minimo_validacion(texto, "Telefono") == 1)
+            {
+                long_tel.Visible = false;
+            }
+        }
+
+        private void correotxt_TextChanged(object sender, EventArgs e)
+        {
+            string texto = correotxt.Text;
+            string tipo = "Correo";
+
+            if (Conexion.Minimo_validacion(texto, tipo) == 1)
+            {
+                val_correo.Visible = false;
+            }
+        }
+
+        private void rfctxt_TextChanged(object sender, EventArgs e)
+        {
+            string texto = rfctxt.Text;
+            string tipo = "RFC";
+
+            if (Conexion.Minimo_validacion(texto, tipo) == 1)
+            {
+                val_rfc.Visible = false;
+            }
+        }
+
+        private void curptxt_TextChanged(object sender, EventArgs e)
+        {
+            string texto = curptxt.Text;
+
+            if (Conexion.Minimo_validacion(texto, "CURP") == 1)
+            {
+                val_curp.Visible = false;
             }
         }
     }

@@ -68,9 +68,18 @@
             this.eliminarbtn = new System.Windows.Forms.Button();
             this.excelbtn = new System.Windows.Forms.Button();
             this.clientesTableAdapter = new Prototipo.ClientesDSTableAdapters.clientesTableAdapter();
+            this.long_id = new System.Windows.Forms.Label();
+            this.long_nom = new System.Windows.Forms.Label();
+            this.long_dom = new System.Windows.Forms.Label();
+            this.long_tel = new System.Windows.Forms.Label();
+            this.val_correo = new System.Windows.Forms.Label();
             this.transparentPanel1 = new Prototipo.TransparentPanel();
             this.cerrarbtn = new System.Windows.Forms.Button();
             this.dragControl1 = new Prototipo.DragControl();
+            this.val_rfc = new System.Windows.Forms.Label();
+            this.val_curp = new System.Windows.Forms.Label();
+            this.val_id = new System.Windows.Forms.Label();
+            this.val_tel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.clientesdgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientesDS)).BeginInit();
@@ -100,6 +109,7 @@
             this.clientetxt.Name = "clientetxt";
             this.clientetxt.Size = new System.Drawing.Size(189, 22);
             this.clientetxt.TabIndex = 1;
+            this.clientetxt.TextChanged += new System.EventHandler(this.clientetxt_TextChanged);
             this.clientetxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             this.clientetxt.Leave += new System.EventHandler(this.textBox1_Leave);
             // 
@@ -114,6 +124,7 @@
             this.nombretxt.Name = "nombretxt";
             this.nombretxt.Size = new System.Drawing.Size(189, 22);
             this.nombretxt.TabIndex = 2;
+            this.nombretxt.TextChanged += new System.EventHandler(this.nombretxt_TextChanged);
             this.nombretxt.Leave += new System.EventHandler(this.textBox2_Leave);
             // 
             // domitxt
@@ -127,6 +138,7 @@
             this.domitxt.Name = "domitxt";
             this.domitxt.Size = new System.Drawing.Size(189, 22);
             this.domitxt.TabIndex = 3;
+            this.domitxt.TextChanged += new System.EventHandler(this.domitxt_TextChanged);
             this.domitxt.Leave += new System.EventHandler(this.textBox3_Leave);
             // 
             // teletxt
@@ -140,6 +152,7 @@
             this.teletxt.Name = "teletxt";
             this.teletxt.Size = new System.Drawing.Size(189, 22);
             this.teletxt.TabIndex = 4;
+            this.teletxt.TextChanged += new System.EventHandler(this.teletxt_TextChanged);
             this.teletxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox4_KeyPress);
             this.teletxt.Leave += new System.EventHandler(this.textBox4_Leave);
             // 
@@ -154,6 +167,7 @@
             this.correotxt.Name = "correotxt";
             this.correotxt.Size = new System.Drawing.Size(189, 22);
             this.correotxt.TabIndex = 5;
+            this.correotxt.TextChanged += new System.EventHandler(this.correotxt_TextChanged);
             this.correotxt.Leave += new System.EventHandler(this.textBox5_Leave);
             // 
             // clientelbl
@@ -263,6 +277,7 @@
             this.rfctxt.Name = "rfctxt";
             this.rfctxt.Size = new System.Drawing.Size(189, 22);
             this.rfctxt.TabIndex = 8;
+            this.rfctxt.TextChanged += new System.EventHandler(this.rfctxt_TextChanged);
             this.rfctxt.Leave += new System.EventHandler(this.textBox6_Leave);
             // 
             // curplbl
@@ -287,6 +302,7 @@
             this.curptxt.Name = "curptxt";
             this.curptxt.Size = new System.Drawing.Size(189, 22);
             this.curptxt.TabIndex = 9;
+            this.curptxt.TextChanged += new System.EventHandler(this.curptxt_TextChanged);
             this.curptxt.Leave += new System.EventHandler(this.textBox7_Leave_1);
             // 
             // clientesdgv
@@ -495,6 +511,66 @@
             // 
             this.clientesTableAdapter.ClearBeforeFill = true;
             // 
+            // long_id
+            // 
+            this.long_id.AutoSize = true;
+            this.long_id.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.long_id.ForeColor = System.Drawing.Color.Red;
+            this.long_id.Location = new System.Drawing.Point(31, 213);
+            this.long_id.Name = "long_id";
+            this.long_id.Size = new System.Drawing.Size(135, 17);
+            this.long_id.TabIndex = 63;
+            this.long_id.Text = "Longitud mínima de 8";
+            this.long_id.Visible = false;
+            // 
+            // long_nom
+            // 
+            this.long_nom.AutoSize = true;
+            this.long_nom.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.long_nom.ForeColor = System.Drawing.Color.Red;
+            this.long_nom.Location = new System.Drawing.Point(31, 283);
+            this.long_nom.Name = "long_nom";
+            this.long_nom.Size = new System.Drawing.Size(135, 17);
+            this.long_nom.TabIndex = 64;
+            this.long_nom.Text = "Longitud mínima de 8";
+            this.long_nom.Visible = false;
+            // 
+            // long_dom
+            // 
+            this.long_dom.AutoSize = true;
+            this.long_dom.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.long_dom.ForeColor = System.Drawing.Color.Red;
+            this.long_dom.Location = new System.Drawing.Point(31, 353);
+            this.long_dom.Name = "long_dom";
+            this.long_dom.Size = new System.Drawing.Size(135, 17);
+            this.long_dom.TabIndex = 65;
+            this.long_dom.Text = "Longitud mínima de 8";
+            this.long_dom.Visible = false;
+            // 
+            // long_tel
+            // 
+            this.long_tel.AutoSize = true;
+            this.long_tel.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.long_tel.ForeColor = System.Drawing.Color.Red;
+            this.long_tel.Location = new System.Drawing.Point(31, 423);
+            this.long_tel.Name = "long_tel";
+            this.long_tel.Size = new System.Drawing.Size(142, 17);
+            this.long_tel.TabIndex = 66;
+            this.long_tel.Text = "Longitud mínima de 10";
+            this.long_tel.Visible = false;
+            // 
+            // val_correo
+            // 
+            this.val_correo.AutoSize = true;
+            this.val_correo.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.val_correo.ForeColor = System.Drawing.Color.Red;
+            this.val_correo.Location = new System.Drawing.Point(31, 494);
+            this.val_correo.Name = "val_correo";
+            this.val_correo.Size = new System.Drawing.Size(107, 17);
+            this.val_correo.TabIndex = 67;
+            this.val_correo.Text = "Correo no válido";
+            this.val_correo.Visible = false;
+            // 
             // transparentPanel1
             // 
             this.transparentPanel1.Controls.Add(this.cerrarbtn);
@@ -525,12 +601,69 @@
             // 
             this.dragControl1.SelectoControl = this.transparentPanel1;
             // 
+            // val_rfc
+            // 
+            this.val_rfc.AutoSize = true;
+            this.val_rfc.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.val_rfc.ForeColor = System.Drawing.Color.Red;
+            this.val_rfc.Location = new System.Drawing.Point(31, 637);
+            this.val_rfc.Name = "val_rfc";
+            this.val_rfc.Size = new System.Drawing.Size(88, 17);
+            this.val_rfc.TabIndex = 68;
+            this.val_rfc.Text = "RFC no válido";
+            this.val_rfc.Visible = false;
+            // 
+            // val_curp
+            // 
+            this.val_curp.AutoSize = true;
+            this.val_curp.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.val_curp.ForeColor = System.Drawing.Color.Red;
+            this.val_curp.Location = new System.Drawing.Point(31, 703);
+            this.val_curp.Name = "val_curp";
+            this.val_curp.Size = new System.Drawing.Size(98, 17);
+            this.val_curp.TabIndex = 69;
+            this.val_curp.Text = "CURP no válido";
+            this.val_curp.Visible = false;
+            // 
+            // val_id
+            // 
+            this.val_id.AutoSize = true;
+            this.val_id.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.val_id.ForeColor = System.Drawing.Color.Red;
+            this.val_id.Location = new System.Drawing.Point(31, 147);
+            this.val_id.Name = "val_id";
+            this.val_id.Size = new System.Drawing.Size(162, 17);
+            this.val_id.TabIndex = 77;
+            this.val_id.Text = "Sólo se permiten números";
+            this.val_id.Visible = false;
+            // 
+            // val_tel
+            // 
+            this.val_tel.AutoSize = true;
+            this.val_tel.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.val_tel.ForeColor = System.Drawing.Color.Red;
+            this.val_tel.Location = new System.Drawing.Point(31, 423);
+            this.val_tel.Name = "val_tel";
+            this.val_tel.Size = new System.Drawing.Size(162, 17);
+            this.val_tel.TabIndex = 78;
+            this.val_tel.Text = "Sólo se permiten números";
+            this.val_tel.Visible = false;
+            // 
             // Clientesform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1040, 857);
+            this.Controls.Add(this.val_tel);
+            this.Controls.Add(this.val_id);
+            this.Controls.Add(this.val_curp);
+            this.Controls.Add(this.val_rfc);
+            this.Controls.Add(this.val_correo);
+            this.Controls.Add(this.long_tel);
+            this.Controls.Add(this.long_dom);
+            this.Controls.Add(this.long_nom);
+            this.Controls.Add(this.long_id);
             this.Controls.Add(this.excelbtn);
             this.Controls.Add(this.eliminarbtn);
             this.Controls.Add(this.modificarbtn);
@@ -616,5 +749,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn rFCDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn curpDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label long_id;
+        private System.Windows.Forms.Label long_nom;
+        private System.Windows.Forms.Label long_dom;
+        private System.Windows.Forms.Label long_tel;
+        private System.Windows.Forms.Label val_correo;
+        private System.Windows.Forms.Label val_rfc;
+        private System.Windows.Forms.Label val_curp;
+        private System.Windows.Forms.Label val_id;
+        private System.Windows.Forms.Label val_tel;
     }
 }

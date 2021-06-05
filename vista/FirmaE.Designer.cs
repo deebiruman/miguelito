@@ -60,10 +60,13 @@
             this.dgvfirma_EX = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.firma_electronicaTableAdapter = new Prototipo.FirmaDSTableAdapters.firma_electronicaTableAdapter();
+            this.long_id = new System.Windows.Forms.Label();
+            this.val_fecha = new System.Windows.Forms.Label();
             this.transparentPanel1 = new Prototipo.TransparentPanel();
             this.cerrarbtn = new System.Windows.Forms.Button();
             this.dragControl1 = new Prototipo.DragControl();
-            this.firma_electronicaTableAdapter = new Prototipo.FirmaDSTableAdapters.firma_electronicaTableAdapter();
+            this.val_id = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.firmaEdgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.firmaelectronicaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.firmaDS)).BeginInit();
@@ -117,6 +120,7 @@
             this.clientetxt.Name = "clientetxt";
             this.clientetxt.Size = new System.Drawing.Size(162, 22);
             this.clientetxt.TabIndex = 1;
+            this.clientetxt.TextChanged += new System.EventHandler(this.clientetxt_TextChanged);
             this.clientetxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.clientetxt_KeyPress);
             this.clientetxt.Leave += new System.EventHandler(this.clientetxt_Leave);
             // 
@@ -226,6 +230,7 @@
             this.fecha_Fn.Size = new System.Drawing.Size(162, 22);
             this.fecha_Fn.TabIndex = 3;
             this.fecha_Fn.Value = new System.DateTime(2021, 1, 1, 0, 0, 0, 0);
+            this.fecha_Fn.ValueChanged += new System.EventHandler(this.fecha_Fn_ValueChanged);
             // 
             // fecha_In
             // 
@@ -399,6 +404,34 @@
             this.pictureBox1.TabIndex = 53;
             this.pictureBox1.TabStop = false;
             // 
+            // firma_electronicaTableAdapter
+            // 
+            this.firma_electronicaTableAdapter.ClearBeforeFill = true;
+            // 
+            // long_id
+            // 
+            this.long_id.AutoSize = true;
+            this.long_id.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.long_id.ForeColor = System.Drawing.Color.Red;
+            this.long_id.Location = new System.Drawing.Point(31, 213);
+            this.long_id.Name = "long_id";
+            this.long_id.Size = new System.Drawing.Size(135, 17);
+            this.long_id.TabIndex = 70;
+            this.long_id.Text = "Longitud mínima de 8";
+            this.long_id.Visible = false;
+            // 
+            // val_fecha
+            // 
+            this.val_fecha.AutoSize = true;
+            this.val_fecha.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.val_fecha.ForeColor = System.Drawing.Color.Red;
+            this.val_fecha.Location = new System.Drawing.Point(31, 364);
+            this.val_fecha.Name = "val_fecha";
+            this.val_fecha.Size = new System.Drawing.Size(147, 17);
+            this.val_fecha.TabIndex = 74;
+            this.val_fecha.Text = "Introduzca bien la fecha";
+            this.val_fecha.Visible = false;
+            // 
             // transparentPanel1
             // 
             this.transparentPanel1.Controls.Add(this.cerrarbtn);
@@ -429,9 +462,17 @@
             // 
             this.dragControl1.SelectoControl = this.transparentPanel1;
             // 
-            // firma_electronicaTableAdapter
+            // val_id
             // 
-            this.firma_electronicaTableAdapter.ClearBeforeFill = true;
+            this.val_id.AutoSize = true;
+            this.val_id.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.val_id.ForeColor = System.Drawing.Color.Red;
+            this.val_id.Location = new System.Drawing.Point(34, 147);
+            this.val_id.Name = "val_id";
+            this.val_id.Size = new System.Drawing.Size(162, 17);
+            this.val_id.TabIndex = 77;
+            this.val_id.Text = "Sólo se permiten números";
+            this.val_id.Visible = false;
             // 
             // FirmaEform
             // 
@@ -439,6 +480,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(735, 772);
+            this.Controls.Add(this.val_id);
+            this.Controls.Add(this.val_fecha);
+            this.Controls.Add(this.long_id);
             this.Controls.Add(this.dgvfirma_EX);
             this.Controls.Add(this.dgvfirma_E);
             this.Controls.Add(this.eliminarbtn);
@@ -506,6 +550,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.Label long_id;
+        private System.Windows.Forms.Label val_fecha;
+        private System.Windows.Forms.Label val_id;
         //private FirmaDSTableAdapters.firma_electronicaTableAdapter firma_electronicaTableAdapter2;
     }
 }

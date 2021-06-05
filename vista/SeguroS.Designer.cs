@@ -39,14 +39,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SeguroSform));
-            this.transparentPanel1 = new Prototipo.TransparentPanel();
-            this.cerrarbtn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.clientelbl = new System.Windows.Forms.Label();
             this.clientetxt = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.dragControl1 = new Prototipo.DragControl();
             this.seguroSdgv = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,40 +61,20 @@
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.seguro_socialTableAdapter = new Prototipo.SeguroDSTableAdapters.seguro_socialTableAdapter();
-            this.transparentPanel1.SuspendLayout();
+            this.long_id = new System.Windows.Forms.Label();
+            this.val_fecha = new System.Windows.Forms.Label();
+            this.val_id = new System.Windows.Forms.Label();
+            this.transparentPanel1 = new Prototipo.TransparentPanel();
+            this.cerrarbtn = new System.Windows.Forms.Button();
+            this.dragControl1 = new Prototipo.DragControl();
             ((System.ComponentModel.ISupportInitialize)(this.seguroSdgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.segurosocialBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.seguroDS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvsguro_S)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvsguro_SX)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.transparentPanel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // transparentPanel1
-            // 
-            this.transparentPanel1.Controls.Add(this.cerrarbtn);
-            this.transparentPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.transparentPanel1.Location = new System.Drawing.Point(0, 0);
-            this.transparentPanel1.Name = "transparentPanel1";
-            this.transparentPanel1.Size = new System.Drawing.Size(763, 49);
-            this.transparentPanel1.TabIndex = 62;
-            // 
-            // cerrarbtn
-            // 
-            this.cerrarbtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.cerrarbtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cerrarbtn.Dock = System.Windows.Forms.DockStyle.Right;
-            this.cerrarbtn.FlatAppearance.BorderSize = 0;
-            this.cerrarbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cerrarbtn.Font = new System.Drawing.Font("Lucida Console", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cerrarbtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.cerrarbtn.Location = new System.Drawing.Point(712, 0);
-            this.cerrarbtn.Name = "cerrarbtn";
-            this.cerrarbtn.Size = new System.Drawing.Size(51, 49);
-            this.cerrarbtn.TabIndex = 50;
-            this.cerrarbtn.Text = "X";
-            this.cerrarbtn.UseVisualStyleBackColor = true;
-            this.cerrarbtn.Click += new System.EventHandler(this.button1_Click);
             // 
             // label3
             // 
@@ -143,6 +120,7 @@
             this.clientetxt.Name = "clientetxt";
             this.clientetxt.Size = new System.Drawing.Size(162, 22);
             this.clientetxt.TabIndex = 1;
+            this.clientetxt.TextChanged += new System.EventHandler(this.clientetxt_TextChanged);
             this.clientetxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.clientetxt_KeyPress);
             this.clientetxt.Leave += new System.EventHandler(this.clientetxt_Leave);
             // 
@@ -156,10 +134,6 @@
             this.label4.Size = new System.Drawing.Size(260, 50);
             this.label4.TabIndex = 55;
             this.label4.Text = "Seguro Social";
-            // 
-            // dragControl1
-            // 
-            this.dragControl1.SelectoControl = this.transparentPanel1;
             // 
             // seguroSdgv
             // 
@@ -270,6 +244,7 @@
             this.fecha_Fn.Name = "fecha_Fn";
             this.fecha_Fn.Size = new System.Drawing.Size(162, 22);
             this.fecha_Fn.TabIndex = 3;
+            this.fecha_Fn.ValueChanged += new System.EventHandler(this.fecha_Fn_ValueChanged);
             // 
             // eliminarbtn
             // 
@@ -436,12 +411,81 @@
             // 
             this.seguro_socialTableAdapter.ClearBeforeFill = true;
             // 
+            // long_id
+            // 
+            this.long_id.AutoSize = true;
+            this.long_id.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.long_id.ForeColor = System.Drawing.Color.Red;
+            this.long_id.Location = new System.Drawing.Point(31, 213);
+            this.long_id.Name = "long_id";
+            this.long_id.Size = new System.Drawing.Size(135, 17);
+            this.long_id.TabIndex = 71;
+            this.long_id.Text = "Longitud mínima de 8";
+            this.long_id.Visible = false;
+            // 
+            // val_fecha
+            // 
+            this.val_fecha.AutoSize = true;
+            this.val_fecha.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.val_fecha.ForeColor = System.Drawing.Color.Red;
+            this.val_fecha.Location = new System.Drawing.Point(33, 364);
+            this.val_fecha.Name = "val_fecha";
+            this.val_fecha.Size = new System.Drawing.Size(147, 17);
+            this.val_fecha.TabIndex = 73;
+            this.val_fecha.Text = "Introduzca bien la fecha";
+            this.val_fecha.Visible = false;
+            // 
+            // val_id
+            // 
+            this.val_id.AutoSize = true;
+            this.val_id.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.val_id.ForeColor = System.Drawing.Color.Red;
+            this.val_id.Location = new System.Drawing.Point(31, 147);
+            this.val_id.Name = "val_id";
+            this.val_id.Size = new System.Drawing.Size(162, 17);
+            this.val_id.TabIndex = 77;
+            this.val_id.Text = "Sólo se permiten números";
+            this.val_id.Visible = false;
+            // 
+            // transparentPanel1
+            // 
+            this.transparentPanel1.Controls.Add(this.cerrarbtn);
+            this.transparentPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.transparentPanel1.Location = new System.Drawing.Point(0, 0);
+            this.transparentPanel1.Name = "transparentPanel1";
+            this.transparentPanel1.Size = new System.Drawing.Size(763, 49);
+            this.transparentPanel1.TabIndex = 62;
+            // 
+            // cerrarbtn
+            // 
+            this.cerrarbtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.cerrarbtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cerrarbtn.Dock = System.Windows.Forms.DockStyle.Right;
+            this.cerrarbtn.FlatAppearance.BorderSize = 0;
+            this.cerrarbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cerrarbtn.Font = new System.Drawing.Font("Lucida Console", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cerrarbtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cerrarbtn.Location = new System.Drawing.Point(712, 0);
+            this.cerrarbtn.Name = "cerrarbtn";
+            this.cerrarbtn.Size = new System.Drawing.Size(51, 49);
+            this.cerrarbtn.TabIndex = 50;
+            this.cerrarbtn.Text = "X";
+            this.cerrarbtn.UseVisualStyleBackColor = true;
+            this.cerrarbtn.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // dragControl1
+            // 
+            this.dragControl1.SelectoControl = this.transparentPanel1;
+            // 
             // SeguroSform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(763, 748);
+            this.Controls.Add(this.val_id);
+            this.Controls.Add(this.val_fecha);
+            this.Controls.Add(this.long_id);
             this.Controls.Add(this.dgvsguro_SX);
             this.Controls.Add(this.dgvsguro_S);
             this.Controls.Add(this.eliminarbtn);
@@ -463,13 +507,13 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Seguro Social";
             this.Load += new System.EventHandler(this.SeguroS_Load);
-            this.transparentPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.seguroSdgv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.segurosocialBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.seguroDS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvsguro_S)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvsguro_SX)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.transparentPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -509,6 +553,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.Label long_id;
+        private System.Windows.Forms.Label val_fecha;
+        private System.Windows.Forms.Label val_id;
         //  private SeguroDSTableAdapters.seguro_socialTableAdapter seguro_socialTableAdapter3;
     }
 }

@@ -32,7 +32,7 @@ namespace Prototipo
         private void SelloD_Load(object sender, EventArgs e)
         {
             // TODO: esta línea de código carga datos en la tabla 'selloDS.sello_digital' Puede moverla o quitarla según sea necesario.
-            this.sello_digitalTableAdapter.Fill(this.selloDS.sello_digital);
+      //      this.sello_digitalTableAdapter.Fill(this.selloDS.sello_digital);
             // TODO: esta línea de código carga datos en la tabla 'selloDS.sello_digital' Puede moverla o quitarla según sea necesario.
             //   this.sello_digitalTableAdapter3.Fill(this.selloDS.sello_digital);
             // TODO: esta línea de código carga datos en la tabla 'miguelitoDataSet8.sello_digital' Puede moverla o quitarla según sea necesario.
@@ -55,7 +55,7 @@ namespace Prototipo
             {
                 if (fecha_In.Value > fecha_Fn.Value)
                 {
-                    MessageBox.Show("Introduzca bien la fecha");
+                    val_fecha.Visible = true;
                 }
                 else
                 {
@@ -144,7 +144,7 @@ namespace Prototipo
             }
             else
             {
-                MessageBox.Show("Longitud minima de 8");
+                long_id.Visible = true;
             }
         }
 
@@ -152,9 +152,28 @@ namespace Prototipo
         {
             if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
             {
-                MessageBox.Show("Solo se aceptan numeros");
+                val_id.Visible = true;
                 e.Handled = true;
                 return;
+            }
+        }
+
+        private void clientetxt_TextChanged(object sender, EventArgs e)
+        {
+            string texto = clientetxt.Text;
+            val_id.Visible = false;
+
+            if (Conexion.Minimo_validacion(texto, "MIN") == 1)
+            {
+                long_id.Visible = false;
+            }
+        }
+
+        private void fecha_Fn_ValueChanged(object sender, EventArgs e)
+        {
+            if (fecha_Fn.Value > fecha_In.Value)
+            {
+                val_fecha.Visible = false;
             }
         }
     }
