@@ -20,17 +20,17 @@ namespace Prototipo {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("SelloDS")]
+    [global::System.Xml.Serialization.XmlRootAttribute("SeguroDataSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class SelloDS : global::System.Data.DataSet {
+    public partial class SeguroDataSet : global::System.Data.DataSet {
         
-        private sello_digitalDataTable tablesello_digital;
+        private seguro_socialDataTable tableseguro_social;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public SelloDS() {
+        public SeguroDataSet() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace Prototipo {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected SelloDS(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected SeguroDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace Prototipo {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["sello_digital"] != null)) {
-                    base.Tables.Add(new sello_digitalDataTable(ds.Tables["sello_digital"]));
+                if ((ds.Tables["seguro_social"] != null)) {
+                    base.Tables.Add(new seguro_socialDataTable(ds.Tables["seguro_social"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace Prototipo {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public sello_digitalDataTable sello_digital {
+        public seguro_socialDataTable seguro_social {
             get {
-                return this.tablesello_digital;
+                return this.tableseguro_social;
             }
         }
         
@@ -127,7 +127,7 @@ namespace Prototipo {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            SelloDS cln = ((SelloDS)(base.Clone()));
+            SeguroDataSet cln = ((SeguroDataSet)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace Prototipo {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["sello_digital"] != null)) {
-                    base.Tables.Add(new sello_digitalDataTable(ds.Tables["sello_digital"]));
+                if ((ds.Tables["seguro_social"] != null)) {
+                    base.Tables.Add(new seguro_socialDataTable(ds.Tables["seguro_social"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace Prototipo {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tablesello_digital = ((sello_digitalDataTable)(base.Tables["sello_digital"]));
+            this.tableseguro_social = ((seguro_socialDataTable)(base.Tables["seguro_social"]));
             if ((initTable == true)) {
-                if ((this.tablesello_digital != null)) {
-                    this.tablesello_digital.InitVars();
+                if ((this.tableseguro_social != null)) {
+                    this.tableseguro_social.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace Prototipo {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "SelloDS";
+            this.DataSetName = "SeguroDataSet";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/SelloDS.xsd";
+            this.Namespace = "http://tempuri.org/SeguroDataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tablesello_digital = new sello_digitalDataTable();
-            base.Tables.Add(this.tablesello_digital);
+            this.tableseguro_social = new seguro_socialDataTable();
+            base.Tables.Add(this.tableseguro_social);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializesello_digital() {
+        private bool ShouldSerializeseguro_social() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace Prototipo {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            SelloDS ds = new SelloDS();
+            SeguroDataSet ds = new SeguroDataSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,14 +270,14 @@ namespace Prototipo {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void sello_digitalRowChangeEventHandler(object sender, sello_digitalRowChangeEvent e);
+        public delegate void seguro_socialRowChangeEventHandler(object sender, seguro_socialRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class sello_digitalDataTable : global::System.Data.TypedTableBase<sello_digitalRow> {
+        public partial class seguro_socialDataTable : global::System.Data.TypedTableBase<seguro_socialRow> {
             
             private global::System.Data.DataColumn columnid_clientes;
             
@@ -287,8 +287,8 @@ namespace Prototipo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public sello_digitalDataTable() {
-                this.TableName = "sello_digital";
+            public seguro_socialDataTable() {
+                this.TableName = "seguro_social";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -296,7 +296,7 @@ namespace Prototipo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal sello_digitalDataTable(global::System.Data.DataTable table) {
+            internal seguro_socialDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -313,7 +313,7 @@ namespace Prototipo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected sello_digitalDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected seguro_socialDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -353,47 +353,47 @@ namespace Prototipo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public sello_digitalRow this[int index] {
+            public seguro_socialRow this[int index] {
                 get {
-                    return ((sello_digitalRow)(this.Rows[index]));
+                    return ((seguro_socialRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event sello_digitalRowChangeEventHandler sello_digitalRowChanging;
+            public event seguro_socialRowChangeEventHandler seguro_socialRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event sello_digitalRowChangeEventHandler sello_digitalRowChanged;
+            public event seguro_socialRowChangeEventHandler seguro_socialRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event sello_digitalRowChangeEventHandler sello_digitalRowDeleting;
+            public event seguro_socialRowChangeEventHandler seguro_socialRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event sello_digitalRowChangeEventHandler sello_digitalRowDeleted;
+            public event seguro_socialRowChangeEventHandler seguro_socialRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Addsello_digitalRow(sello_digitalRow row) {
+            public void Addseguro_socialRow(seguro_socialRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public sello_digitalRow Addsello_digitalRow(int id_clientes, System.DateTime fecha_in, System.DateTime fecha_fn) {
-                sello_digitalRow rowsello_digitalRow = ((sello_digitalRow)(this.NewRow()));
+            public seguro_socialRow Addseguro_socialRow(int id_clientes, System.DateTime fecha_in, System.DateTime fecha_fn) {
+                seguro_socialRow rowseguro_socialRow = ((seguro_socialRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id_clientes,
                         fecha_in,
                         fecha_fn};
-                rowsello_digitalRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowsello_digitalRow);
-                return rowsello_digitalRow;
+                rowseguro_socialRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowseguro_socialRow);
+                return rowseguro_socialRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                sello_digitalDataTable cln = ((sello_digitalDataTable)(base.Clone()));
+                seguro_socialDataTable cln = ((seguro_socialDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -401,7 +401,7 @@ namespace Prototipo {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new sello_digitalDataTable();
+                return new seguro_socialDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -422,32 +422,33 @@ namespace Prototipo {
                 this.columnfecha_fn = new global::System.Data.DataColumn("fecha_fn", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnfecha_fn);
                 this.columnid_clientes.AllowDBNull = false;
+                this.columnfecha_in.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public sello_digitalRow Newsello_digitalRow() {
-                return ((sello_digitalRow)(this.NewRow()));
+            public seguro_socialRow Newseguro_socialRow() {
+                return ((seguro_socialRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new sello_digitalRow(builder);
+                return new seguro_socialRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(sello_digitalRow);
+                return typeof(seguro_socialRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.sello_digitalRowChanged != null)) {
-                    this.sello_digitalRowChanged(this, new sello_digitalRowChangeEvent(((sello_digitalRow)(e.Row)), e.Action));
+                if ((this.seguro_socialRowChanged != null)) {
+                    this.seguro_socialRowChanged(this, new seguro_socialRowChangeEvent(((seguro_socialRow)(e.Row)), e.Action));
                 }
             }
             
@@ -455,8 +456,8 @@ namespace Prototipo {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.sello_digitalRowChanging != null)) {
-                    this.sello_digitalRowChanging(this, new sello_digitalRowChangeEvent(((sello_digitalRow)(e.Row)), e.Action));
+                if ((this.seguro_socialRowChanging != null)) {
+                    this.seguro_socialRowChanging(this, new seguro_socialRowChangeEvent(((seguro_socialRow)(e.Row)), e.Action));
                 }
             }
             
@@ -464,8 +465,8 @@ namespace Prototipo {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.sello_digitalRowDeleted != null)) {
-                    this.sello_digitalRowDeleted(this, new sello_digitalRowChangeEvent(((sello_digitalRow)(e.Row)), e.Action));
+                if ((this.seguro_socialRowDeleted != null)) {
+                    this.seguro_socialRowDeleted(this, new seguro_socialRowChangeEvent(((seguro_socialRow)(e.Row)), e.Action));
                 }
             }
             
@@ -473,14 +474,14 @@ namespace Prototipo {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.sello_digitalRowDeleting != null)) {
-                    this.sello_digitalRowDeleting(this, new sello_digitalRowChangeEvent(((sello_digitalRow)(e.Row)), e.Action));
+                if ((this.seguro_socialRowDeleting != null)) {
+                    this.seguro_socialRowDeleting(this, new seguro_socialRowChangeEvent(((seguro_socialRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Removesello_digitalRow(sello_digitalRow row) {
+            public void Removeseguro_socialRow(seguro_socialRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -489,7 +490,7 @@ namespace Prototipo {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                SelloDS ds = new SelloDS();
+                SeguroDataSet ds = new SeguroDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -507,7 +508,7 @@ namespace Prototipo {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "sello_digitalDataTable";
+                attribute2.FixedValue = "seguro_socialDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -551,25 +552,25 @@ namespace Prototipo {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class sello_digitalRow : global::System.Data.DataRow {
+        public partial class seguro_socialRow : global::System.Data.DataRow {
             
-            private sello_digitalDataTable tablesello_digital;
+            private seguro_socialDataTable tableseguro_social;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal sello_digitalRow(global::System.Data.DataRowBuilder rb) : 
+            internal seguro_socialRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tablesello_digital = ((sello_digitalDataTable)(this.Table));
+                this.tableseguro_social = ((seguro_socialDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int id_clientes {
                 get {
-                    return ((int)(this[this.tablesello_digital.id_clientesColumn]));
+                    return ((int)(this[this.tableseguro_social.id_clientesColumn]));
                 }
                 set {
-                    this[this.tablesello_digital.id_clientesColumn] = value;
+                    this[this.tableseguro_social.id_clientesColumn] = value;
                 }
             }
             
@@ -577,15 +578,10 @@ namespace Prototipo {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public System.DateTime fecha_in {
                 get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tablesello_digital.fecha_inColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fecha_in\' de la tabla \'sello_digital\' es DBNull.", e);
-                    }
+                    return ((global::System.DateTime)(this[this.tableseguro_social.fecha_inColumn]));
                 }
                 set {
-                    this[this.tablesello_digital.fecha_inColumn] = value;
+                    this[this.tableseguro_social.fecha_inColumn] = value;
                 }
             }
             
@@ -594,39 +590,27 @@ namespace Prototipo {
             public System.DateTime fecha_fn {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tablesello_digital.fecha_fnColumn]));
+                        return ((global::System.DateTime)(this[this.tableseguro_social.fecha_fnColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fecha_fn\' de la tabla \'sello_digital\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fecha_fn\' de la tabla \'seguro_social\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablesello_digital.fecha_fnColumn] = value;
+                    this[this.tableseguro_social.fecha_fnColumn] = value;
                 }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Isfecha_inNull() {
-                return this.IsNull(this.tablesello_digital.fecha_inColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setfecha_inNull() {
-                this[this.tablesello_digital.fecha_inColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Isfecha_fnNull() {
-                return this.IsNull(this.tablesello_digital.fecha_fnColumn);
+                return this.IsNull(this.tableseguro_social.fecha_fnColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setfecha_fnNull() {
-                this[this.tablesello_digital.fecha_fnColumn] = global::System.Convert.DBNull;
+                this[this.tableseguro_social.fecha_fnColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -634,22 +618,22 @@ namespace Prototipo {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class sello_digitalRowChangeEvent : global::System.EventArgs {
+        public class seguro_socialRowChangeEvent : global::System.EventArgs {
             
-            private sello_digitalRow eventRow;
+            private seguro_socialRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public sello_digitalRowChangeEvent(sello_digitalRow row, global::System.Data.DataRowAction action) {
+            public seguro_socialRowChangeEvent(seguro_socialRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public sello_digitalRow Row {
+            public seguro_socialRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -665,7 +649,7 @@ namespace Prototipo {
         }
     }
 }
-namespace Prototipo.SelloDSTableAdapters {
+namespace Prototipo.SeguroDataSetTableAdapters {
     
     
     /// <summary>
@@ -677,7 +661,7 @@ namespace Prototipo.SelloDSTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class sello_digitalTableAdapter : global::System.ComponentModel.Component {
+    public partial class seguro_socialTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -691,7 +675,7 @@ namespace Prototipo.SelloDSTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public sello_digitalTableAdapter() {
+        public seguro_socialTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -788,14 +772,14 @@ namespace Prototipo.SelloDSTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "sello_digital";
+            tableMapping.DataSetTable = "seguro_social";
             tableMapping.ColumnMappings.Add("id_clientes", "id_clientes");
             tableMapping.ColumnMappings.Add("fecha_in", "fecha_in");
             tableMapping.ColumnMappings.Add("fecha_fn", "fecha_fn");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[sello_digital] ([id_clientes], [fecha_in], [fecha_fn]) VALUES " +
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[seguro_social] ([id_clientes], [fecha_in], [fecha_fn]) VALUES " +
                 "(@id_clientes, @fecha_in, @fecha_fn)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_clientes", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_clientes", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -807,7 +791,7 @@ namespace Prototipo.SelloDSTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Prototipo.Properties.Settings.Default.DPS2_Clientes;
+            this._connection.ConnectionString = global::Prototipo.Properties.Settings.Default.MiguelitoRemoto;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -816,7 +800,7 @@ namespace Prototipo.SelloDSTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT id_clientes, fecha_in, fecha_fn FROM dbo.sello_digital";
+            this._commandCollection[0].CommandText = "SELECT id_clientes, fecha_in, fecha_fn FROM dbo.seguro_social";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -824,7 +808,7 @@ namespace Prototipo.SelloDSTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(SelloDS.sello_digitalDataTable dataTable) {
+        public virtual int Fill(SeguroDataSet.seguro_socialDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -837,9 +821,9 @@ namespace Prototipo.SelloDSTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual SelloDS.sello_digitalDataTable GetData() {
+        public virtual SeguroDataSet.seguro_socialDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            SelloDS.sello_digitalDataTable dataTable = new SelloDS.sello_digitalDataTable();
+            SeguroDataSet.seguro_socialDataTable dataTable = new SeguroDataSet.seguro_socialDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -847,15 +831,15 @@ namespace Prototipo.SelloDSTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(SelloDS.sello_digitalDataTable dataTable) {
+        public virtual int Update(SeguroDataSet.seguro_socialDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(SelloDS dataSet) {
-            return this.Adapter.Update(dataSet, "sello_digital");
+        public virtual int Update(SeguroDataSet dataSet) {
+            return this.Adapter.Update(dataSet, "seguro_social");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -877,14 +861,9 @@ namespace Prototipo.SelloDSTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int id_clientes, global::System.Nullable<global::System.DateTime> fecha_in, global::System.Nullable<global::System.DateTime> fecha_fn) {
+        public virtual int Insert(int id_clientes, System.DateTime fecha_in, global::System.Nullable<global::System.DateTime> fecha_fn) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(id_clientes));
-            if ((fecha_in.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(fecha_in.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
+            this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(fecha_in));
             if ((fecha_fn.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(fecha_fn.Value));
             }
@@ -920,7 +899,7 @@ namespace Prototipo.SelloDSTableAdapters {
         
         private UpdateOrderOption _updateOrder;
         
-        private sello_digitalTableAdapter _sello_digitalTableAdapter;
+        private seguro_socialTableAdapter _seguro_socialTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -942,12 +921,12 @@ namespace Prototipo.SelloDSTableAdapters {
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public sello_digitalTableAdapter sello_digitalTableAdapter {
+        public seguro_socialTableAdapter seguro_socialTableAdapter {
             get {
-                return this._sello_digitalTableAdapter;
+                return this._seguro_socialTableAdapter;
             }
             set {
-                this._sello_digitalTableAdapter = value;
+                this._seguro_socialTableAdapter = value;
             }
         }
         
@@ -970,9 +949,9 @@ namespace Prototipo.SelloDSTableAdapters {
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._sello_digitalTableAdapter != null) 
-                            && (this._sello_digitalTableAdapter.Connection != null))) {
-                    return this._sello_digitalTableAdapter.Connection;
+                if (((this._seguro_socialTableAdapter != null) 
+                            && (this._seguro_socialTableAdapter.Connection != null))) {
+                    return this._seguro_socialTableAdapter.Connection;
                 }
                 return null;
             }
@@ -987,7 +966,7 @@ namespace Prototipo.SelloDSTableAdapters {
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._sello_digitalTableAdapter != null)) {
+                if ((this._seguro_socialTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -999,14 +978,14 @@ namespace Prototipo.SelloDSTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateUpdatedRows(SelloDS dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(SeguroDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._sello_digitalTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.sello_digital.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._seguro_socialTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.seguro_social.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._sello_digitalTableAdapter.Update(updatedRows));
+                    result = (result + this._seguro_socialTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -1018,13 +997,13 @@ namespace Prototipo.SelloDSTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateInsertedRows(SelloDS dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(SeguroDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._sello_digitalTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.sello_digital.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._seguro_socialTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.seguro_social.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._sello_digitalTableAdapter.Update(addedRows));
+                    result = (result + this._seguro_socialTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -1036,13 +1015,13 @@ namespace Prototipo.SelloDSTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateDeletedRows(SelloDS dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(SeguroDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._sello_digitalTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.sello_digital.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._seguro_socialTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.seguro_social.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._sello_digitalTableAdapter.Update(deletedRows));
+                    result = (result + this._seguro_socialTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -1078,15 +1057,15 @@ namespace Prototipo.SelloDSTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public virtual int UpdateAll(SelloDS dataSet) {
+        public virtual int UpdateAll(SeguroDataSet dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._sello_digitalTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._sello_digitalTableAdapter.Connection) == false))) {
+            if (((this._seguro_socialTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._seguro_socialTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("Todos los TableAdapters administrados por un TableAdapterManager deben usar la mi" +
                         "sma cadena de conexión.");
             }
@@ -1122,13 +1101,13 @@ namespace Prototipo.SelloDSTableAdapters {
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._sello_digitalTableAdapter != null)) {
-                    revertConnections.Add(this._sello_digitalTableAdapter, this._sello_digitalTableAdapter.Connection);
-                    this._sello_digitalTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._sello_digitalTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._sello_digitalTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._sello_digitalTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._sello_digitalTableAdapter.Adapter);
+                if ((this._seguro_socialTableAdapter != null)) {
+                    revertConnections.Add(this._seguro_socialTableAdapter, this._seguro_socialTableAdapter.Connection);
+                    this._seguro_socialTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._seguro_socialTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._seguro_socialTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._seguro_socialTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._seguro_socialTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -1189,9 +1168,9 @@ namespace Prototipo.SelloDSTableAdapters {
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._sello_digitalTableAdapter != null)) {
-                    this._sello_digitalTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._sello_digitalTableAdapter]));
-                    this._sello_digitalTableAdapter.Transaction = null;
+                if ((this._seguro_socialTableAdapter != null)) {
+                    this._seguro_socialTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._seguro_socialTableAdapter]));
+                    this._seguro_socialTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

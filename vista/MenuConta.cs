@@ -163,16 +163,7 @@ namespace Prototipo
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'miguelitoDataSet19.declaracion_fiscal' Puede moverla o quitarla según sea necesario.
-            //this.declaracion_fiscalTableAdapter.Fill(this.miguelitoDataSet19.declaracion_fiscal);
-            // TODO: esta línea de código carga datos en la tabla 'miguelitoDataSet18.sello_digital' Puede moverla o quitarla según sea necesario.
-            //this.sello_digitalTableAdapter.Fill(this.miguelitoDataSet18.sello_digital);
-            // TODO: esta línea de código carga datos en la tabla 'miguelitoDataSet17.seguro_social' Puede moverla o quitarla según sea necesario.
-            //this.seguro_socialTableAdapter1.Fill(this.miguelitoDataSet17.seguro_social);
-            // TODO: esta línea de código carga datos en la tabla 'miguelitoDataSet16.seguro_social' Puede moverla o quitarla según sea necesario.
-            //this.seguro_socialTableAdapter.Fill(this.miguelitoDataSet16.seguro_social);
-            // TODO: esta línea de código carga datos en la tabla 'miguelitoDataSet14.firma_electronica' Puede moverla o quitarla según sea necesario.
-            //this.firma_electronicaTableAdapter.Fill(this.miguelitoDataSet14.firma_electronica);
+
         }
     }
 }

@@ -24,7 +24,7 @@ namespace Prototipo
             con.alerta_Fe(dgvfirma_E);
             con.alerta_FeX(dgvfirma_EX);
         }
-        
+
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -32,20 +32,8 @@ namespace Prototipo
 
         private void FirmaE_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'firmaDS.firma_electronica' Puede moverla o quitarla según sea necesario.
-            this.firma_electronicaTableAdapter.Fill(this.firmaDS.firma_electronica);
-            // TODO: esta línea de código carga datos en la tabla 'firmaDS.firma_electronica' Puede moverla o quitarla según sea necesario.
-            //    this.firma_electronicaTableAdapter2.Fill(this.firmaDS.firma_electronica);
-            // TODO: esta línea de código carga datos en la tabla 'miguelitoDataSet9.firma_electronica' Puede moverla o quitarla según sea necesario.
-            //    this.firma_electronicaTableAdapter1.Fill(this.miguelitoDataSet9.firma_electronica);
-            // TODO: esta línea de código carga datos en la tabla 'miguelitoDataSet5.firma_electronica' Puede moverla o quitarla según sea necesario.
-            //  this.firma_electronicaTableAdapter.Fill(this.miguelitoDataSet5.firma_electronica);
-            // TODO: esta línea de código carga datos en la tabla 'miguelitoDataSet4.firma_electrónica' Puede moverla o quitarla según sea necesario.
-            //this.firma_electrónicaTableAdapter2.Fill(this.miguelitoDataSet4.firma_electrónica);
-            // TODO: esta línea de código carga datos en la tabla 'el_Pana_MiguelDataSet5.firma_electrónica' Puede moverla o quitarla según sea necesario.
-            //this.firma_electrónicaTableAdapter1.Fill(this.el_Pana_MiguelDataSet5.firma_electrónica);
-            // TODO: esta línea de código carga datos en la tabla 'el_Pana_MiguelDataSet1.firma_electrónica' Puede moverla o quitarla según sea necesario.
-            //this.firma_electrónicaTableAdapter.Fill(this.el_Pana_MiguelDataSet1.firma_electrónica);
+            // TODO: esta línea de código carga datos en la tabla 'firmaDataSet.firma_electronica' Puede moverla o quitarla según sea necesario.
+            this.firma_electronicaTableAdapter1.Fill(this.firmaDataSet.firma_electronica);
         }
 
         private void agregarbtn_Click(object sender, EventArgs e)
@@ -142,7 +130,7 @@ namespace Prototipo
         {
             if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
             {
-                MessageBox.Show("Solo se aceptan numeros");
+                val_id.Visible = true;
                 e.Handled = true;
                 return;
             }
@@ -156,9 +144,32 @@ namespace Prototipo
             {
 
             }
+            else if (clientetxt.Text == "")
+            {
+                long_id.Visible = false;
+            }
             else
             {
-                MessageBox.Show("Longitud minima de 8");
+                long_id.Visible = true;
+                clientetxt.SelectAll();
+            }
+        }
+
+        private void clientetxt_TextChanged(object sender, EventArgs e)
+        {
+            string texto = clientetxt.Text;
+            val_id.Visible = false;
+            if (Conexion.Minimo_validacion(texto, "MIN") == 1)
+            {
+                long_id.Visible = false;
+            }
+        }
+
+        private void fecha_Fn_ValueChanged(object sender, EventArgs e)
+        {
+            if (fecha_Fn.Value > fecha_In.Value)
+            {
+                val_fecha.Visible = false;
             }
         }
     }

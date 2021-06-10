@@ -35,19 +35,23 @@
             this.social_btn = new System.Windows.Forms.PictureBox();
             this.cliente_btn = new System.Windows.Forms.PictureBox();
             this.Sello_btn = new System.Windows.Forms.PictureBox();
+            this.Fondo = new System.Windows.Forms.PictureBox();
+            this.notyFe = new System.Windows.Forms.NotifyIcon(this.components);
+            this.notySd = new System.Windows.Forms.NotifyIcon(this.components);
+            this.notySs = new System.Windows.Forms.NotifyIcon(this.components);
+            this.notyDf = new System.Windows.Forms.NotifyIcon(this.components);
             this.transparentPanel1 = new Prototipo.TransparentPanel();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.dragControl1 = new Prototipo.DragControl();
-            this.Fondo = new System.Windows.Forms.PictureBox();
-            this.notifyprueba = new System.Windows.Forms.NotifyIcon(this.components);
+            this.Bienvenida_Label = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Fiscal_btn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.firma_btn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.social_btn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cliente_btn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Sello_btn)).BeginInit();
-            this.transparentPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Fondo)).BeginInit();
+            this.transparentPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // Fiscal_btn
@@ -125,6 +129,47 @@
             this.Sello_btn.MouseEnter += new System.EventHandler(this.pictureBox1_MouseEnter);
             this.Sello_btn.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);
             // 
+            // Fondo
+            // 
+            this.Fondo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Fondo.Location = new System.Drawing.Point(742, 359);
+            this.Fondo.Name = "Fondo";
+            this.Fondo.Size = new System.Drawing.Size(278, 278);
+            this.Fondo.TabIndex = 16;
+            this.Fondo.TabStop = false;
+            // 
+            // notyFe
+            // 
+            this.notyFe.Icon = ((System.Drawing.Icon)(resources.GetObject("notyFe.Icon")));
+            this.notyFe.Text = "notifyIcon1";
+            this.notyFe.Visible = true;
+            this.notyFe.BalloonTipClicked += new System.EventHandler(this.notyFe_BalloonTipClicked);
+            this.notyFe.Click += new System.EventHandler(this.notyFe_Click);
+            // 
+            // notySd
+            // 
+            this.notySd.Icon = ((System.Drawing.Icon)(resources.GetObject("notySd.Icon")));
+            this.notySd.Text = "notifyIcon1";
+            this.notySd.Visible = true;
+            this.notySd.BalloonTipClicked += new System.EventHandler(this.notySd_BalloonTipClicked_1);
+            this.notySd.Click += new System.EventHandler(this.notySd_Click);
+            // 
+            // notySs
+            // 
+            this.notySs.Icon = ((System.Drawing.Icon)(resources.GetObject("notySs.Icon")));
+            this.notySs.Text = "notifyIcon2";
+            this.notySs.Visible = true;
+            this.notySs.BalloonTipClicked += new System.EventHandler(this.notySs_BalloonTipClicked);
+            this.notySs.Click += new System.EventHandler(this.notySs_Click);
+            // 
+            // notyDf
+            // 
+            this.notyDf.Icon = ((System.Drawing.Icon)(resources.GetObject("notyDf.Icon")));
+            this.notyDf.Text = "notifyIcon3";
+            this.notyDf.Visible = true;
+            this.notyDf.BalloonTipClicked += new System.EventHandler(this.notyDf_BalloonTipClicked);
+            this.notyDf.Click += new System.EventHandler(this.notyDf_Click);
+            // 
             // transparentPanel1
             // 
             this.transparentPanel1.Controls.Add(this.button2);
@@ -173,20 +218,15 @@
             // 
             this.dragControl1.SelectoControl = this.transparentPanel1;
             // 
-            // Fondo
+            // Bienvenida_Label
             // 
-            this.Fondo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Fondo.Location = new System.Drawing.Point(742, 359);
-            this.Fondo.Name = "Fondo";
-            this.Fondo.Size = new System.Drawing.Size(278, 278);
-            this.Fondo.TabIndex = 16;
-            this.Fondo.TabStop = false;
-            // 
-            // notifyprueba
-            // 
-            this.notifyprueba.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyprueba.Icon")));
-            this.notifyprueba.Text = "notifyIcon1";
-            this.notifyprueba.Visible = true;
+            this.Bienvenida_Label.AutoSize = true;
+            this.Bienvenida_Label.Font = new System.Drawing.Font("Ebrima", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Bienvenida_Label.Location = new System.Drawing.Point(246, 578);
+            this.Bienvenida_Label.Name = "Bienvenida_Label";
+            this.Bienvenida_Label.Size = new System.Drawing.Size(149, 37);
+            this.Bienvenida_Label.TabIndex = 18;
+            this.Bienvenida_Label.Text = "Bienvenido";
             // 
             // MenuAdminform
             // 
@@ -195,6 +235,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::Prototipo.Properties.Resources.fondo_seleccion;
             this.ClientSize = new System.Drawing.Size(1000, 624);
+            this.Controls.Add(this.Bienvenida_Label);
             this.Controls.Add(this.Fondo);
             this.Controls.Add(this.Sello_btn);
             this.Controls.Add(this.Fiscal_btn);
@@ -213,9 +254,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.social_btn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cliente_btn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Sello_btn)).EndInit();
-            this.transparentPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Fondo)).EndInit();
+            this.transparentPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -230,6 +272,10 @@
         private System.Windows.Forms.PictureBox cliente_btn;
         private System.Windows.Forms.PictureBox Sello_btn;
         private System.Windows.Forms.PictureBox Fondo;
-        private System.Windows.Forms.NotifyIcon notifyprueba;
+        private System.Windows.Forms.NotifyIcon notyFe;
+        private System.Windows.Forms.NotifyIcon notySd;
+        private System.Windows.Forms.NotifyIcon notySs;
+        private System.Windows.Forms.NotifyIcon notyDf;
+        private System.Windows.Forms.Label Bienvenida_Label;
     }
 }

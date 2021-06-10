@@ -84,7 +84,7 @@
             // 
             this.usuariotxt.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.usuariotxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.usuariotxt.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usuariotxt.Font = new System.Drawing.Font("Ebrima", 12F);
             this.usuariotxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.usuariotxt.Location = new System.Drawing.Point(618, 235);
             this.usuariotxt.Name = "usuariotxt";
@@ -95,7 +95,7 @@
             // 
             this.contratxt.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.contratxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.contratxt.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contratxt.Font = new System.Drawing.Font("Ebrima", 12F);
             this.contratxt.Location = new System.Drawing.Point(618, 316);
             this.contratxt.Name = "contratxt";
             this.contratxt.PasswordChar = '•';
@@ -141,13 +141,13 @@
             this.entrarbtn.FlatAppearance.BorderSize = 0;
             this.entrarbtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.OrangeRed;
             this.entrarbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.entrarbtn.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.entrarbtn.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.entrarbtn.ForeColor = System.Drawing.Color.White;
             this.entrarbtn.Location = new System.Drawing.Point(618, 378);
             this.entrarbtn.Name = "entrarbtn";
             this.entrarbtn.Size = new System.Drawing.Size(130, 44);
             this.entrarbtn.TabIndex = 3;
-            this.entrarbtn.Text = "ENTRAR";
+            this.entrarbtn.Text = "Entrar";
             this.entrarbtn.UseVisualStyleBackColor = false;
             this.entrarbtn.Click += new System.EventHandler(this.entrarbtn_Click);
             // 

@@ -19,24 +19,17 @@ namespace Prototipo
         public MenuAdminform()
         {
             InitializeComponent();
-            //trigger = 1;
             (new Core.DropShadow()).ApplyShadows(this);
-            Stub_VerificacionFecha();
+
+            //establecer valor del label bienvenida
+            Bienvenida_Label.Text = "Bienvenido, " + PantallaNform.nombreusuario_logged;
+
+            notificacion_FE();
+            notificacion_SD();
+            notificacion_Ss();
+            notificacion_Df();
         }
-
-        private void Stub_VerificacionFecha()
-        {
-            int trigger = 1;
-            int id_actual = 0;
-
-            id_actual = con.Stub_ObtenerID();
-
-            if (trigger == 1)
-            {
-                notifyprueba.ShowBalloonTip(1000, "Documento proximo a expirar", "La firma electronica del usuario " + id_actual, ToolTipIcon.None);
-            }
-        }
-
+        
         private void pictureBox1_MouseEnter(object sender, EventArgs e)
         {
             Sello_btn.Size = new Size(275, 113);
@@ -207,16 +200,103 @@ namespace Prototipo
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'miguelitoDataSet19.declaracion_fiscal' Puede moverla o quitarla según sea necesario.
-            //this.declaracion_fiscalTableAdapter.Fill(this.miguelitoDataSet19.declaracion_fiscal);
-            // TODO: esta línea de código carga datos en la tabla 'miguelitoDataSet18.sello_digital' Puede moverla o quitarla según sea necesario.
-            //this.sello_digitalTableAdapter.Fill(this.miguelitoDataSet18.sello_digital);
-            // TODO: esta línea de código carga datos en la tabla 'miguelitoDataSet17.seguro_social' Puede moverla o quitarla según sea necesario.
-            //this.seguro_socialTableAdapter1.Fill(this.miguelitoDataSet17.seguro_social);
-            // TODO: esta línea de código carga datos en la tabla 'miguelitoDataSet16.seguro_social' Puede moverla o quitarla según sea necesario.
-            //this.seguro_socialTableAdapter.Fill(this.miguelitoDataSet16.seguro_social);
-            // TODO: esta línea de código carga datos en la tabla 'miguelitoDataSet14.firma_electronica' Puede moverla o quitarla según sea necesario.
-            //this.firma_electronicaTableAdapter.Fill(this.miguelitoDataSet14.firma_electronica);
+
         }
+
+        #region notificaciones 
+        //FIRMA ELECTRONICA
+
+        private void notificacion_FE()
+        {
+            int id_actual = 0;
+
+            id_actual = con.noty_Fe(id_actual);
+
+            notyFe.ShowBalloonTip(1000, "Documento proximo a expirar", "La firma electronica del usuario " + id_actual, ToolTipIcon.None);
+        }
+
+        private void notyFe_BalloonTipClicked(object sender, EventArgs e)
+        {
+            FirmaEform fe = new FirmaEform();
+            fe.Show();
+        }
+
+        private void notyFe_Click(object sender, EventArgs e)
+        {
+            FirmaEform fe = new FirmaEform();
+            fe.Show();
+        }
+
+        //SELLO DIGITAL
+
+        private void notificacion_SD()
+        {
+            int id_actual = 0;
+
+            id_actual = con.noty_Sd(id_actual);
+
+            notyFe.ShowBalloonTip(1000, "Documento proximo a expirar", "El sello digial del usuario " + id_actual, ToolTipIcon.None);
+        }
+
+        private void notySd_BalloonTipClicked_1(object sender, EventArgs e)
+        {
+            SelloD sd = new SelloD();
+            sd.Show();
+        }
+
+        private void notySd_Click(object sender, EventArgs e)
+        {
+            SelloD sd = new SelloD();
+            sd.Show();
+        }
+
+
+        //SEGURO SOCIAL
+
+        private void notificacion_Ss()
+        {
+            int id_actual = 0;
+
+            id_actual = con.noty_Ss(id_actual);
+
+            notyFe.ShowBalloonTip(1000, "Documento proximo a expirar", "El seguro social del usuario " + id_actual, ToolTipIcon.None);
+        }
+
+        private void notySs_BalloonTipClicked(object sender, EventArgs e)
+        {
+            SeguroSform ss = new SeguroSform();
+            ss.Show();
+        }
+
+        private void notySs_Click(object sender, EventArgs e)
+        {
+            SeguroSform ss = new SeguroSform();
+            ss.Show();
+        }
+
+        //DECLARACION FISCAL
+
+        private void notificacion_Df()
+        {
+            int id_actual = 0;
+
+            id_actual = con.noty_Df(id_actual);
+
+            notyFe.ShowBalloonTip(1000, "Documento proximo a expirar", "La declaracion fiscal del usuario " + id_actual, ToolTipIcon.None);
+        }
+
+        private void notyDf_BalloonTipClicked(object sender, EventArgs e)
+        {
+            DeclaracionFform df = new DeclaracionFform();
+            df.Show();
+        }
+
+        private void notyDf_Click(object sender, EventArgs e)
+        {
+            DeclaracionFform df = new DeclaracionFform();
+            df.Show();
+        }
+
+        #endregion
     }
 }

@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="DeclaracionDS" targetNamespace="http://tempuri.org/DeclaracionDS.xsd" xmlns:mstns="http://tempuri.org/DeclaracionDS.xsd" xmlns="http://tempuri.org/DeclaracionDS.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+<xs:schema id="DeclaracionDataSet" targetNamespace="http://tempuri.org/DeclaracionDataSet.xsd" xmlns:mstns="http://tempuri.org/DeclaracionDataSet.xsd" xmlns="http://tempuri.org/DeclaracionDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="DPS2_Clientes" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DPS2_Clientes (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Prototipo.Properties.Settings.GlobalReference.Default.DPS2_Clientes" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="MiguelitoRemoto" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="MiguelitoRemoto (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Prototipo.Properties.Settings.GlobalReference.Default.MiguelitoRemoto" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="declaracion_fiscalTableAdapter" GeneratorDataComponentClassName="declaracion_fiscalTableAdapter" Name="declaracion_fiscal" UserDataComponentName="declaracion_fiscalTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="DPS2_Clientes (Settings)" DbObjectName="miguelito.dbo.declaracion_fiscal" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="MiguelitoRemoto (Settings)" DbObjectName="miguelito.dbo.declaracion_fiscal" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>INSERT INTO [dbo].[declaracion_fiscal] ([id_clientes], [fecha_in], [fecha_fn], [declaracion_f], [seguro_s], [dos_p]) VALUES (@id_clientes, @fecha_in, @fecha_fn, @declaracion_f, @seguro_s, @dos_p)</CommandText>
@@ -46,7 +46,7 @@
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="DeclaracionDS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DeclaracionDS" msprop:Generator_UserDSName="DeclaracionDS">
+  <xs:element name="DeclaracionDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DeclaracionDataSet" msprop:Generator_UserDSName="DeclaracionDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element name="declaracion_fiscal" msprop:Generator_TableClassName="declaracion_fiscalDataTable" msprop:Generator_TableVarName="tabledeclaracion_fiscal" msprop:Generator_TablePropName="declaracion_fiscal" msprop:Generator_RowDeletingName="declaracion_fiscalRowDeleting" msprop:Generator_RowChangingName="declaracion_fiscalRowChanging" msprop:Generator_RowEvHandlerName="declaracion_fiscalRowChangeEventHandler" msprop:Generator_RowDeletedName="declaracion_fiscalRowDeleted" msprop:Generator_UserTableName="declaracion_fiscal" msprop:Generator_RowChangedName="declaracion_fiscalRowChanged" msprop:Generator_RowEvArgName="declaracion_fiscalRowChangeEvent" msprop:Generator_RowClassName="declaracion_fiscalRow">

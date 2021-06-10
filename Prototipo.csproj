@@ -43,8 +43,8 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
@@ -63,30 +63,30 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClientesDS.Designer.cs">
+    <Compile Include="clientesDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ClientesDS.xsd</DependentUpon>
+      <DependentUpon>clientesDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DeclaracionDS.Designer.cs">
+    <Compile Include="DeclaracionDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DeclaracionDS.xsd</DependentUpon>
+      <DependentUpon>DeclaracionDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="FirmaDS.Designer.cs">
+    <Compile Include="FirmaDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>FirmaDS.xsd</DependentUpon>
+      <DependentUpon>FirmaDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="SeguroDS.Designer.cs">
+    <Compile Include="SeguroDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SeguroDS.xsd</DependentUpon>
+      <DependentUpon>SeguroDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="SelloDS.Designer.cs">
+    <Compile Include="SelloDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SelloDS.xsd</DependentUpon>
+      <DependentUpon>SelloDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Test\TestCliente.cs" />
     <Compile Include="vista\Clientes.cs">
@@ -107,6 +107,12 @@
     </Compile>
     <Compile Include="vista\FirmaE.Designer.cs">
       <DependentUpon>FirmaE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vista\Correo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vista\Correo.Designer.cs">
+      <DependentUpon>Correo.cs</DependentUpon>
     </Compile>
     <Compile Include="vista\PantallaIN.cs">
       <SubType>Form</SubType>
@@ -150,6 +156,9 @@
     <EmbeddedResource Include="vista\Clientes.resx">
       <DependentUpon>Clientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="vista\Correo.resx">
+      <DependentUpon>Correo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="vista\DeclaracionF.resx">
       <DependentUpon>DeclaracionF.cs</DependentUpon>
     </EmbeddedResource>
@@ -181,38 +190,38 @@
     <EmbeddedResource Include="vista\SelloD.resx">
       <DependentUpon>SelloD.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="ClientesDS.xsc">
-      <DependentUpon>ClientesDS.xsd</DependentUpon>
+    <None Include="clientesDataSet.xsc">
+      <DependentUpon>clientesDataSet.xsd</DependentUpon>
     </None>
-    <None Include="ClientesDS.xsd">
+    <None Include="clientesDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ClientesDS.Designer.cs</LastGenOutput>
+      <LastGenOutput>clientesDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="ClientesDS.xss">
-      <DependentUpon>ClientesDS.xsd</DependentUpon>
+    <None Include="clientesDataSet.xss">
+      <DependentUpon>clientesDataSet.xsd</DependentUpon>
     </None>
-    <None Include="DeclaracionDS.xsc">
-      <DependentUpon>DeclaracionDS.xsd</DependentUpon>
+    <None Include="DeclaracionDataSet.xsc">
+      <DependentUpon>DeclaracionDataSet.xsd</DependentUpon>
     </None>
-    <None Include="DeclaracionDS.xsd">
+    <None Include="DeclaracionDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DeclaracionDS.Designer.cs</LastGenOutput>
+      <LastGenOutput>DeclaracionDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="DeclaracionDS.xss">
-      <DependentUpon>DeclaracionDS.xsd</DependentUpon>
+    <None Include="DeclaracionDataSet.xss">
+      <DependentUpon>DeclaracionDataSet.xsd</DependentUpon>
     </None>
-    <None Include="FirmaDS.xsc">
-      <DependentUpon>FirmaDS.xsd</DependentUpon>
+    <None Include="FirmaDataSet.xsc">
+      <DependentUpon>FirmaDataSet.xsd</DependentUpon>
     </None>
-    <None Include="FirmaDS.xsd">
+    <None Include="FirmaDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>FirmaDS.Designer.cs</LastGenOutput>
+      <LastGenOutput>FirmaDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="FirmaDS.xss">
-      <DependentUpon>FirmaDS.xsd</DependentUpon>
+    <None Include="FirmaDataSet.xss">
+      <DependentUpon>FirmaDataSet.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -229,27 +238,27 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="SeguroDS.xsc">
-      <DependentUpon>SeguroDS.xsd</DependentUpon>
+    <None Include="SeguroDataSet.xsc">
+      <DependentUpon>SeguroDataSet.xsd</DependentUpon>
     </None>
-    <None Include="SeguroDS.xsd">
+    <None Include="SeguroDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>SeguroDS.Designer.cs</LastGenOutput>
+      <LastGenOutput>SeguroDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="SeguroDS.xss">
-      <DependentUpon>SeguroDS.xsd</DependentUpon>
+    <None Include="SeguroDataSet.xss">
+      <DependentUpon>SeguroDataSet.xsd</DependentUpon>
     </None>
-    <None Include="SelloDS.xsc">
-      <DependentUpon>SelloDS.xsd</DependentUpon>
+    <None Include="SelloDataSet.xsc">
+      <DependentUpon>SelloDataSet.xsd</DependentUpon>
     </None>
-    <None Include="SelloDS.xsd">
+    <None Include="SelloDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>SelloDS.Designer.cs</LastGenOutput>
+      <LastGenOutput>SelloDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="SelloDS.xss">
-      <DependentUpon>SelloDS.xsd</DependentUpon>
+    <None Include="SelloDataSet.xss">
+      <DependentUpon>SelloDataSet.xsd</DependentUpon>
     </None>
     <None Include="UI\BUTTONS\BOTON_INICIO_SESION.png" />
   </ItemGroup>

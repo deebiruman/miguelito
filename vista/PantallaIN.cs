@@ -7,6 +7,8 @@ namespace Prototipo
     {
         Conexion con = new Conexion();
 
+        //datos_para_el_Label_de_bienvenida
+        public static string nombreusuario_logged;
 
         //-------------------------Factory Method--------------------------
         public PantallaNform()
@@ -27,12 +29,16 @@ namespace Prototipo
 
         private void entrarbtn_Click(object sender, EventArgs e)
         {
+            /*
             String UssTadeo = "Tadeo";
             String PassTadeo = "Tadeo";
             String UssMiguel = "Miguel";
             String PassMiguel = "Miguel";
             if (usuariotxt.Text == UssMiguel & contratxt.Text == PassMiguel)
             {
+                //establecer nombre del usuario loguineado;
+                nombreusuario_logged = "Miguel";
+                
                 MenuAdminform f2 = new MenuAdminform();
                 Hide();
                 f2.ShowDialog();
@@ -40,6 +46,9 @@ namespace Prototipo
             }
             else if (usuariotxt.Text == UssTadeo & contratxt.Text == PassTadeo)
             {
+                //establecer nombre del usuario loguineado;
+                nombreusuario_logged = "Tadeo";
+                
                 MenuContaform f3 = new MenuContaform();
                 Hide();
                 f3.ShowDialog();
@@ -56,11 +65,11 @@ namespace Prototipo
                     MessageBox.Show("Datos Incorrectos");
                 }
             }
-        }
-
-        private void button2_Click_1(object sender, EventArgs e)
-        {
-
+            */
+            MenuAdminform f2 = new MenuAdminform();
+            Hide();
+            f2.ShowDialog();
+            Show();
         }
     }
 }

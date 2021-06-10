@@ -54,5 +54,16 @@ namespace Prototipo.Properties {
                 return ((string)(this["DPS2_Clientes"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=25.106.128.31;Initial Catalog=miguelito;Persist Security Info=True;Us" +
+            "er ID=sa;Password=123")]
+        public string MiguelitoRemoto {
+            get {
+                return ((string)(this["MiguelitoRemoto"]));
+            }
+        }
     }
 }

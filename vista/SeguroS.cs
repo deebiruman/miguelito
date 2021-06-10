@@ -30,17 +30,8 @@ namespace Prototipo
 
         private void SeguroS_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'seguroDS.seguro_social' Puede moverla o quitarla según sea necesario.
-            this.seguro_socialTableAdapter.Fill(this.seguroDS.seguro_social);
-            // TODO: esta línea de código carga datos en la tabla 'seguroDS.seguro_social' Puede moverla o quitarla según sea necesario.
-            //    this.seguro_socialTableAdapter3.Fill(this.seguroDS.seguro_social);
-            // TODO: esta línea de código carga datos en la tabla 'miguelitoDataSet7.seguro_social' Puede moverla o quitarla según sea necesario.
-            //    this.seguro_socialTableAdapter2.Fill(this.miguelitoDataSet7.seguro_social);
-            // TODO: esta línea de código carga datos en la tabla 'miguelitoDataSet3.seguro_social' Puede moverla o quitarla según sea necesario.
-            // this.seguro_socialTableAdapter1.Fill(this.miguelitoDataSet3.seguro_social);
-            // TODO: esta línea de código carga datos en la tabla 'el_Pana_MiguelDataSet3.seguro_social' Puede moverla o quitarla según sea necesario.
-            // this.seguro_socialTableAdapter.Fill(this.el_Pana_MiguelDataSet3.seguro_social);
-
+            // TODO: esta línea de código carga datos en la tabla 'seguroDataSet.seguro_social' Puede moverla o quitarla según sea necesario.
+            this.seguro_socialTableAdapter1.Fill(this.seguroDataSet.seguro_social);
         }
 
         private void agregarbtn_Click(object sender, EventArgs e)
@@ -137,7 +128,7 @@ namespace Prototipo
         {
             if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
             {
-                MessageBox.Show("Solo se aceptan numeros");
+                val_id.Visible = true;
                 e.Handled = true;
                 return;
             }
@@ -151,9 +142,32 @@ namespace Prototipo
             {
 
             }
+            else if (clientetxt.Text == "")
+            {
+                long_id.Visible = false;
+            }
             else
             {
-                MessageBox.Show("Longitud minima de 8");
+                long_id.Visible = true;
+                clientetxt.SelectAll();
+            }
+        }
+
+        private void clientetxt_TextChanged(object sender, EventArgs e)
+        {
+            string texto = clientetxt.Text;
+            val_id.Visible = false;
+            if (Conexion.Minimo_validacion(texto, "MIN") == 1)
+            {
+                long_id.Visible = false;
+            }
+        }
+
+        private void fecha_Fn_ValueChanged(object sender, EventArgs e)
+        {
+            if (fecha_Fn.Value > fecha_In.Value)
+            {
+                val_fecha.Visible = false;
             }
         }
     }

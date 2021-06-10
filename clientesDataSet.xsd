@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="ClientesDS" targetNamespace="http://tempuri.org/ClientesDS.xsd" xmlns:mstns="http://tempuri.org/ClientesDS.xsd" xmlns="http://tempuri.org/ClientesDS.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+<xs:schema id="clientesDataSet" targetNamespace="http://tempuri.org/clientesDataSet.xsd" xmlns:mstns="http://tempuri.org/clientesDataSet.xsd" xmlns="http://tempuri.org/clientesDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="DPS2_Clientes" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DPS2_Clientes (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Prototipo.Properties.Settings.GlobalReference.Default.DPS2_Clientes" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="MiguelitoRemoto" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="MiguelitoRemoto (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Prototipo.Properties.Settings.GlobalReference.Default.MiguelitoRemoto" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="clientesTableAdapter" GeneratorDataComponentClassName="clientesTableAdapter" Name="clientes" UserDataComponentName="clientesTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="DPS2_Clientes (Settings)" DbObjectName="miguelito.dbo.clientes" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="MiguelitoRemoto (Settings)" DbObjectName="miguelito.dbo.clientes" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[clientes] WHERE (([id_clientes] = @Original_id_clientes) AND ((@IsNull_nombre_cl = 1 AND [nombre_cl] IS NULL) OR ([nombre_cl] = @Original_nombre_cl)) AND ((@IsNull_domicilio_cl = 1 AND [domicilio_cl] IS NULL) OR ([domicilio_cl] = @Original_domicilio_cl)) AND ((@IsNull_telefono_cl = 1 AND [telefono_cl] IS NULL) OR ([telefono_cl] = @Original_telefono_cl)) AND ((@IsNull_correo_cl = 1 AND [correo_cl] IS NULL) OR ([correo_cl] = @Original_correo_cl)) AND ((@IsNull_RFC = 1 AND [RFC] IS NULL) OR ([RFC] = @Original_RFC)) AND ((@IsNull_curp = 1 AND [curp] IS NULL) OR ([curp] = @Original_curp)))</CommandText>
@@ -97,7 +97,7 @@ SELECT id_clientes, nombre_cl, domicilio_cl, telefono_cl, correo_cl, RFC, curp F
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="ClientesDS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="ClientesDS" msprop:Generator_UserDSName="ClientesDS">
+  <xs:element name="clientesDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="clientesDataSet" msprop:Generator_UserDSName="clientesDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element name="clientes" msprop:Generator_TableClassName="clientesDataTable" msprop:Generator_TableVarName="tableclientes" msprop:Generator_TablePropName="clientes" msprop:Generator_RowDeletingName="clientesRowDeleting" msprop:Generator_RowChangingName="clientesRowChanging" msprop:Generator_RowEvHandlerName="clientesRowChangeEventHandler" msprop:Generator_RowDeletedName="clientesRowDeleted" msprop:Generator_UserTableName="clientes" msprop:Generator_RowChangedName="clientesRowChanged" msprop:Generator_RowEvArgName="clientesRowChangeEvent" msprop:Generator_RowClassName="clientesRow">

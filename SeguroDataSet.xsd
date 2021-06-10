@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="SeguroDS" targetNamespace="http://tempuri.org/SeguroDS.xsd" xmlns:mstns="http://tempuri.org/SeguroDS.xsd" xmlns="http://tempuri.org/SeguroDS.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+<xs:schema id="SeguroDataSet" targetNamespace="http://tempuri.org/SeguroDataSet.xsd" xmlns:mstns="http://tempuri.org/SeguroDataSet.xsd" xmlns="http://tempuri.org/SeguroDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="DPS2_Clientes" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DPS2_Clientes (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Prototipo.Properties.Settings.GlobalReference.Default.DPS2_Clientes" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="MiguelitoRemoto" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="MiguelitoRemoto (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Prototipo.Properties.Settings.GlobalReference.Default.MiguelitoRemoto" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="seguro_socialTableAdapter" GeneratorDataComponentClassName="seguro_socialTableAdapter" Name="seguro_social" UserDataComponentName="seguro_socialTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="DPS2_Clientes (Settings)" DbObjectName="miguelito.dbo.seguro_social" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="MiguelitoRemoto (Settings)" DbObjectName="miguelito.dbo.seguro_social" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>INSERT INTO [dbo].[seguro_social] ([id_clientes], [fecha_in], [fecha_fn]) VALUES (@id_clientes, @fecha_in, @fecha_fn)</CommandText>
@@ -40,7 +40,7 @@
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="SeguroDS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="SeguroDS" msprop:Generator_UserDSName="SeguroDS">
+  <xs:element name="SeguroDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="SeguroDataSet" msprop:Generator_UserDSName="SeguroDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element name="seguro_social" msprop:Generator_TableClassName="seguro_socialDataTable" msprop:Generator_TableVarName="tableseguro_social" msprop:Generator_TablePropName="seguro_social" msprop:Generator_RowDeletingName="seguro_socialRowDeleting" msprop:Generator_RowChangingName="seguro_socialRowChanging" msprop:Generator_RowEvHandlerName="seguro_socialRowChangeEventHandler" msprop:Generator_RowDeletedName="seguro_socialRowDeleted" msprop:Generator_UserTableName="seguro_social" msprop:Generator_RowChangedName="seguro_socialRowChanged" msprop:Generator_RowEvArgName="seguro_socialRowChangeEvent" msprop:Generator_RowClassName="seguro_socialRow">

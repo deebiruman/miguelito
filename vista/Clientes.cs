@@ -37,41 +37,42 @@ namespace Prototipo
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-            rfctxt.MaxLength = 13;
-            rfctxt.Show();
-            rfclbl.Show();
+            if (moralrbtn.Checked)
+            {
+                curptxt.Hide();
+                curplbl.Hide();
+                val_curp.Hide();
 
-            curptxt.Enabled = false;
-            curplbl.Enabled = false;
+                rfctxt.MaxLength = 12;
+                rfctxt.Show();
+                rfclbl.Show();
 
-            curptxt.Clear();
+                curptxt.Enabled = false;
+                curplbl.Enabled = false;
+
+                curptxt.Clear();
+            }
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
-            rfctxt.MaxLength = 12;
-            rfctxt.Show();
-            rfclbl.Show();
-            curptxt.Show();
-            curplbl.Show();
+            if (fisicarbtn.Checked)
+            {
+                rfctxt.MaxLength = 13;
+                rfctxt.Show();
+                rfclbl.Show();
+                curptxt.Show();
+                curplbl.Show();
 
-            curptxt.Enabled = true;
-            curplbl.Enabled = true;
-
-            // textBox6.Hide();
-            // label5.Hide();
+                curptxt.Enabled = true;
+                curplbl.Enabled = true;
+            }
         }
 
         private void Clientes_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'clientesDS.clientes' Puede moverla o quitarla según sea necesario.
-            this.clientesTableAdapter.Fill(this.clientesDS.clientes);
-            // TODO: esta línea de código carga datos en la tabla 'miguelitoDataSet1.clientes' Puede moverla o quitarla según sea necesario.
-            //  this.clientesTableAdapter1.Fill(this.miguelitoDataSet1.clientes);
-            // TODO: esta línea de código carga datos en la tabla 'miguelitoDataSet.clientes' Puede moverla o quitarla según sea necesario.
-            //  this.clientesTableAdapter1.Fill(this.miguelitoDataSet.clientes);
-            // TODO: esta línea de código carga datos en la tabla 'el_Pana_MiguelDataSet.clientes' Puede moverla o quitarla según sea necesario.
-            //this.clientesTableAdapter.Fill(this.el_Pana_MiguelDataSet.clientes);
+            // TODO: esta línea de código carga datos en la tabla 'clientesDataSet.clientes' Puede moverla o quitarla según sea necesario.
+            this.clientesTableAdapter1.Fill(this.clientesDataSet.clientes);
         }
 
         //---------------------------Mediator------------------------
@@ -79,7 +80,7 @@ namespace Prototipo
         {
             Conexion.Stop = 0;
             Conexion.Verificador_vacio = 2;
-            
+
             if (moralrbtn.Checked == false & fisicarbtn.Checked == false)
             {
                 MessageBox.Show("Se tiene que selecionar el tipo de cliente");
@@ -164,7 +165,6 @@ namespace Prototipo
 
         private void eliminarbtn_Click(object sender, EventArgs e)
         {
-
             if (clientetxt.Text == "")
             {
                 MessageBox.Show("Introduzca el id del cliente");
@@ -185,7 +185,7 @@ namespace Prototipo
                     rfctxt.Text = "";
                     curptxt.Text = "";
                 }
-                else if(resultado == DialogResult.No)
+                else if (resultado == DialogResult.No)
                 {
 
                 }
@@ -221,7 +221,7 @@ namespace Prototipo
         {
             if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
             {
-                MessageBox.Show("Solo se aceptan numeros");
+                val_id.Visible = true;
                 e.Handled = true;
                 return;
             }
@@ -231,7 +231,7 @@ namespace Prototipo
         {
             if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
             {
-                MessageBox.Show("Solo se aceptan numeros");
+                val_tel.Visible = true;
                 e.Handled = true;
                 return;
             }
@@ -241,33 +241,127 @@ namespace Prototipo
         //------------------Template Method------------------
         public void exportarexcel(DataGridView tabla)
         {
-            Microsoft.Office.Interop.Excel.Application excel = new Microsoft.Office.Interop.Excel.Application();
-
-            excel.Application.Workbooks.Add(true);
-
-            int indicecolumna = 0;
-            
-            foreach (DataGridViewColumn col in tabla.Columns)
+            con.ExportarDataGridViewExcel(clientesdgv); void DataSetsToExcel(List<DataGridView> dataSets, string fileName)
             {
-                indicecolumna++;
+                Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
+                Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Add(Microsoft.Office.Interop.Excel.XlWBATemplate.xlWBATWorksheet);
+                Microsoft.Office.Interop.Excel.Sheets xlSheets = null;
+                Microsoft.Office.Interop.Excel.Worksheet xlWorksheet = null;
 
-                excel.Cells[1, indicecolumna] = col.Name;
-            }
-            int indicefila = 0;
-
-            foreach (DataGridViewRow row in tabla.Rows)
-            {
-                indicefila++;
-                indicecolumna = 0;
-
-                foreach (DataGridViewColumn col in tabla.Columns)
+                foreach (DataGridView dataSet in dataSets)
                 {
-                    indicecolumna++;
+                    //System.Data.DataGrid dataTable = dataSet.Tables[0];
+                    int rowNo = dataSet.RowCount;
+                    int columnNo = dataSet.ColumnCount;
 
-                    excel.Cells[indicefila + 1, indicecolumna] = row.Cells[col.Name].Value;
+                    int contadorFinal = 0;
+
+                    int i = 0;
+                    int j = 0;
+                    int startrow = 2;
+                    int startcolumn = 2;
+
+                    //Create Excel Sheets
+                    xlSheets = xlWorkbook.Sheets;
+                    xlWorksheet = (Microsoft.Office.Interop.Excel.Worksheet)xlSheets.Add(xlSheets[1], Type.Missing, Type.Missing, Type.Missing);
+                    xlWorksheet.Name = dataSet.Name;
+
+                    //Titulos
+                    xlApp.Range["A1"].Value = "ID Cliente";
+                    xlApp.ActiveCell.Offset[1, 0].Select();
+
+                    xlApp.Range["B1"].Value = "Nombre cliente";
+                    xlApp.ActiveCell.Offset[1, 0].Select();
+
+                    xlApp.Range["C1"].Value = "Telefono";
+                    xlApp.ActiveCell.Offset[1, 0].Select();
+
+                    xlApp.Range["D1"].Value = "Domicilio";
+                    xlApp.ActiveCell.Offset[1, 0].Select();
+
+                    xlApp.Range["E1"].Value = "Correo electrónico";
+                    xlApp.ActiveCell.Offset[1, 0].Select();
+
+                    xlApp.Range["F1"].Value = "RFC";
+                    xlApp.ActiveCell.Offset[1, 0].Select();
+
+                    xlApp.Range["G1"].Value = "CURP";
+                    xlApp.ActiveCell.Offset[1, 0].Select();
+
+                    for (j = 0; j < dataSet.Columns.Count; j++)
+                    {
+                        try
+                        {
+                            Microsoft.Office.Interop.Excel.Range myRange = (Microsoft.Office.Interop.Excel.Range)xlWorksheet.Cells[startrow, startcolumn + j];
+                            myRange.Value2 = dataSet.Columns[j].HeaderText;
+                        }
+                        catch
+                        {
+                            ;
+                        }
+                    }
+
+                    //Write datagridview content
+                    int indicefila = 1;
+                    int indicecolumna = 1;
+
+                    foreach (DataGridViewRow row in dataSet.Rows)
+                    {
+                        indicefila++;
+                        indicecolumna = 0;
+
+                        foreach (DataGridViewColumn col in dataSet.Columns)
+                        {
+                            indicecolumna++;
+
+                            xlWorksheet.Cells[indicefila + 1, indicecolumna] = row.Cells[col.Name].Value;
+
+                            xlWorksheet.Columns.AutoFit();
+                            xlWorksheet.Rows.AutoFit();
+
+                            contadorFinal += 1;
+                        }
+                    }
+
+                    xlApp.Range["A2"].Delete();
+                    xlApp.Range["B2"].Delete();
+                    xlApp.Range["C2"].Delete();
+                    xlApp.Range["D2"].Delete();
+                    xlApp.Range["E2"].Delete();
+                    xlApp.Range["F2"].Delete();
+                    xlApp.Range["G2"].Delete();
+                    xlApp.Range["H2"].Delete();
+
+                    xlWorksheet.Range["A1:G" + contadorFinal].HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignRight;
                 }
+
+
+     //Remove the Default Worksheet
+     ((Microsoft.Office.Interop.Excel.Worksheet)xlApp.ActiveWorkbook.Sheets[xlApp.ActiveWorkbook.Sheets.Count]).Delete();
+
+
+                xlWorkbook.SaveAs(fileName, Microsoft.Office.Interop.Excel.XlFileFormat.xlWorkbookNormal);
+
+                xlWorkbook.Close();
+                xlApp.Quit();
+                GC.Collect();
             }
-            excel.Visible = true;
+             void ExportarDataGridViewExcel(DataGridView grd_cliente)
+             {
+                string nombrearchivo;
+
+                SaveFileDialog fichero = new SaveFileDialog();
+                fichero.Filter = "Excel (*.xls)|*.xls";
+
+                 if (fichero.ShowDialog() == DialogResult.OK)
+                 {
+                     List<DataGridView> dataSets = new List<DataGridView>();
+                     dataSets.Add(grd_cliente);
+
+                     nombrearchivo = fichero.FileName;
+                     DataSetsToExcel(dataSets, nombrearchivo);
+                 }
+             }
         }
 
         private void excelbtn_Click(object sender, EventArgs e)
@@ -285,15 +379,19 @@ namespace Prototipo
             string texto = correotxt.Text;
             string tipo = "Correo";
 
-            if (Conexion.Minimo_validacion(texto,tipo) == 1)
+            if (Conexion.Minimo_validacion(texto, tipo) == 1)
             {
-                
+                correotxt.Text = "";
+
+            }
+            else if (correotxt.Text == "")
+            {
+                val_correo.Visible = false;
             }
             else
             {
-                MessageBox.Show("Correo no válido");
+                val_correo.Visible = true;
                 correotxt.SelectAll();
-                correotxt.Focus();
             }
         }
 
@@ -304,13 +402,16 @@ namespace Prototipo
 
             if (Conexion.Minimo_validacion(texto, tipo) == 1)
             {
-                
+
+            }
+            else if (rfctxt.Text == "")
+            {
+                val_rfc.Visible = false;
             }
             else
             {
-                MessageBox.Show("RFC no válido");
+                val_rfc.Visible = true;
                 rfctxt.SelectAll();
-                rfctxt.Focus();
             }
         }
 
@@ -322,13 +423,17 @@ namespace Prototipo
             {
 
             }
+            else if (curptxt.Text == "")
+            {
+                val_curp.Visible = false;
+            }
             else
             {
-                MessageBox.Show("CURP no válido");
+                val_curp.Visible = true;
                 curptxt.SelectAll();
-                curptxt.Focus();
             }
         }
+
 
         private void textBox1_Leave(object sender, EventArgs e)
         {
@@ -336,11 +441,16 @@ namespace Prototipo
 
             if (Conexion.Minimo_validacion(texto, "MIN") == 1)
             {
-                
+
+            }
+            else if (clientetxt.Text == "")
+            {
+                long_id.Visible = false;
             }
             else
             {
-                MessageBox.Show("Longitud minima de 8");
+                long_id.Visible = true;
+                clientetxt.SelectAll();
             }
         }
 
@@ -352,11 +462,14 @@ namespace Prototipo
             {
 
             }
+            else if (nombretxt.Text == "")
+            {
+                long_nom.Visible = false;
+            }
             else
             {
-                MessageBox.Show("Longitud minima de 8");
+                long_nom.Visible = true;
                 nombretxt.SelectAll();
-                nombretxt.Focus();
             }
         }
 
@@ -368,11 +481,14 @@ namespace Prototipo
             {
 
             }
+            else if (domitxt.Text == "")
+            {
+                long_dom.Visible = false;
+            }
             else
             {
-                MessageBox.Show("Longitud minima de 8");
+                long_dom.Visible = true;
                 domitxt.SelectAll();
-                domitxt.Focus();
             }
         }
 
@@ -384,12 +500,121 @@ namespace Prototipo
             {
 
             }
+            else if (teletxt.Text == "")
+            {
+                val_tel.Visible = false;
+            }
             else
             {
-                MessageBox.Show("Longitud minima de 10");
+                val_tel.Visible = true;
                 teletxt.SelectAll();
-                teletxt.Focus();
             }
+        }
+
+        private void clientetxt_TextChanged(object sender, EventArgs e)
+        {
+            string texto = clientetxt.Text;
+            val_id.Visible = false;
+            ClearAll.Show();
+
+            if (Conexion.Minimo_validacion(texto, "MIN") == 1)
+            {
+                long_id.Visible = false;
+            }
+        }
+
+        private void nombretxt_TextChanged(object sender, EventArgs e)
+        {
+            string texto = nombretxt.Text;
+            ClearAll.Show();
+
+
+            if (Conexion.Minimo_validacion(texto, "MIN") == 1)
+            {
+                long_nom.Visible = false;
+            }
+        }
+
+        private void domitxt_TextChanged(object sender, EventArgs e)
+        {
+            string texto = domitxt.Text;
+            ClearAll.Show();
+
+            if (Conexion.Minimo_validacion(texto, "MIN") == 1)
+            {
+                long_dom.Visible = false;
+            }
+        }
+
+        private void teletxt_TextChanged(object sender, EventArgs e)
+        {
+            string texto = teletxt.Text;
+            val_tel.Visible = false;
+            ClearAll.Show();
+
+            if (Conexion.Minimo_validacion(texto, "Telefono") == 1)
+            {
+                val_tel.Visible = false;
+            }
+        }
+
+        private void correotxt_TextChanged(object sender, EventArgs e)
+        {
+            string texto = correotxt.Text;
+            string tipo = "Correo";
+            ClearAll.Show();
+
+            if (Conexion.Minimo_validacion(texto, tipo) == 1)
+            {
+                val_correo.Visible = false;
+            }
+        }
+
+        private void rfctxt_TextChanged(object sender, EventArgs e)
+        {
+            string texto = rfctxt.Text;
+            string tipo = "RFC";
+            ClearAll.Show();
+
+            if (Conexion.Minimo_validacion(texto, tipo) == 1)
+            {
+                val_rfc.Visible = false;
+            }
+        }
+
+        private void curptxt_TextChanged(object sender, EventArgs e)
+        {
+            string texto = curptxt.Text;
+            ClearAll.Show();
+
+            if (Conexion.Minimo_validacion(texto, "CURP") == 1)
+            {
+                val_curp.Visible = false;
+            }
+        }
+
+        private void ClearAll_Click(object sender, EventArgs e)
+        {
+            clientetxt.Enabled = true;
+
+            clientetxt.Text = "";
+            nombretxt.Text = "";
+            domitxt.Text = "";
+            teletxt.Text = "";
+            correotxt.Text = "";
+            rfctxt.Text = "";
+            curptxt.Text = "";
+
+            val_correo.Visible = false;
+            val_curp.Visible = false;
+            val_id.Visible = false;
+            val_rfc.Visible = false;
+            val_tel.Visible = false;
+            long_dom.Visible = false;
+            long_id.Visible = false;
+            long_nom.Visible = false;
+
+            ClearAll.Hide();
         }
     }
 }

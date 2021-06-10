@@ -8,6 +8,7 @@ using System.Data;
 using System.Data.Sql;
 using System.Data.SqlClient;
 using System.Text.RegularExpressions;
+using System.IO;
 //---------------Flyweight----------------
 
 //----------------Memento-----------------
@@ -156,7 +157,7 @@ namespace Prototipo
         {
             try
             {
-                con = new SqlConnection(@"Data Source=DESKTOP-OLO6R1D;Initial Catalog=miguelito;Integrated Security=True");
+                con = new SqlConnection(@"Data Source=25.106.128.31;Initial Catalog=miguelito;Persist Security Info=True;User ID=sa;Password=123");
                 con.Open();
             }
             catch (Exception ex)
@@ -169,16 +170,131 @@ namespace Prototipo
         {
         }
 
+        public void DataSetsToExcel(List<DataGridView> dataSets, string fileName)
+        {
+            Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
+            Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Add(Microsoft.Office.Interop.Excel.XlWBATemplate.xlWBATWorksheet);
+            Microsoft.Office.Interop.Excel.Sheets xlSheets = null;
+            Microsoft.Office.Interop.Excel.Worksheet xlWorksheet = null;
+
+            foreach (DataGridView dataSet in dataSets)
+            {
+                //System.Data.DataGrid dataTable = dataSet.Tables[0];
+                int rowNo = dataSet.RowCount;
+                int columnNo = dataSet.ColumnCount;
+
+                int contadorFinal = 0;
+
+                int i = 0;
+                int j = 0;
+                int startrow = 2;
+                int startcolumn = 2;
+
+                //Create Excel Sheets
+                xlSheets = xlWorkbook.Sheets;
+                xlWorksheet = (Microsoft.Office.Interop.Excel.Worksheet)xlSheets.Add(xlSheets[1], Type.Missing, Type.Missing, Type.Missing);
+                xlWorksheet.Name = dataSet.Name;
+
+                //Titulos
+                xlApp.Range["A1"].Value = "ID Cliente";
+                xlApp.ActiveCell.Offset[1, 0].Select();
+
+                xlApp.Range["B1"].Value = "Nombre cliente";
+                xlApp.ActiveCell.Offset[1, 0].Select();
+
+                xlApp.Range["C1"].Value = "Telefono";
+                xlApp.ActiveCell.Offset[1, 0].Select();
+
+                xlApp.Range["D1"].Value = "Domicilio";
+                xlApp.ActiveCell.Offset[1, 0].Select();
+
+                xlApp.Range["E1"].Value = "Correo electrónico";
+                xlApp.ActiveCell.Offset[1, 0].Select();
+
+                xlApp.Range["F1"].Value = "RFC";
+                xlApp.ActiveCell.Offset[1, 0].Select();
+
+                xlApp.Range["G1"].Value = "CURP";
+                xlApp.ActiveCell.Offset[1, 0].Select();
+
+                for (j = 0; j < dataSet.Columns.Count; j++)
+                {
+                    try
+                    {
+                        Microsoft.Office.Interop.Excel.Range myRange = (Microsoft.Office.Interop.Excel.Range)xlWorksheet.Cells[startrow, startcolumn + j];
+                        myRange.Value2 = dataSet.Columns[j].HeaderText;
+                    }
+                    catch
+                    {
+                        ;
+                    }
+                }
+
+                //Write datagridview content
+                int indicefila = 1;
+                int indicecolumna = 1;
+
+                foreach (DataGridViewRow row in dataSet.Rows)
+                {
+                    indicefila++;
+                    indicecolumna = 0;
+
+                    foreach (DataGridViewColumn col in dataSet.Columns)
+                    {
+                        indicecolumna++;
+
+                        xlWorksheet.Cells[indicefila + 1, indicecolumna] = row.Cells[col.Name].Value;
+
+                        xlWorksheet.Columns.AutoFit();
+                        xlWorksheet.Rows.AutoFit();
+
+                        contadorFinal += 1;
+                    }
+                }
+
+                xlApp.Range["A2"].Delete();
+                xlApp.Range["B2"].Delete();
+                xlApp.Range["C2"].Delete();
+                xlApp.Range["D2"].Delete();
+                xlApp.Range["E2"].Delete();
+                xlApp.Range["F2"].Delete();
+                xlApp.Range["G2"].Delete();
+                xlApp.Range["H2"].Delete();
+
+                xlWorksheet.Range["A1:G" + contadorFinal].HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignRight;
+            }
+            //Remove the Default Worksheet
+            ((Microsoft.Office.Interop.Excel.Worksheet)xlApp.ActiveWorkbook.Sheets[xlApp.ActiveWorkbook.Sheets.Count]).Delete();
+
+            xlWorkbook.SaveAs(fileName, Microsoft.Office.Interop.Excel.XlFileFormat.xlWorkbookNormal);
+
+            xlWorkbook.Close();
+            xlApp.Quit();
+            GC.Collect();
+        }
+
+        public void ExportarDataGridViewExcel(DataGridView grd_cliente)
+        {
+            string nombrearchivo;
+
+            SaveFileDialog fichero = new SaveFileDialog();
+            fichero.Filter = "Excel (*.xls)|*.xls";
+
+            if (fichero.ShowDialog() == DialogResult.OK)
+            {
+                List<DataGridView> dataSets = new List<DataGridView>();
+                dataSets.Add(grd_cliente);
+
+                nombrearchivo = fichero.FileName;
+                DataSetsToExcel(dataSets, nombrearchivo);
+            }
+        }
+
         //----------------Abstract Factory-----------------
         //---------------Decorator------------
         //-------------Builder-------------
         #region clientes
         /*-------------------------------------clientes------------------------------------------------------------------*/
-
-        public int Stub_ObtenerID()
-        {
-            return 17331004;
-        }
 
         public string Insertar_Cl(int id_clientes, string nombre_cl, string domicilio_cl, string telefono_cl, string correo_cl, string RFC, string curp)
         {
@@ -237,7 +353,7 @@ namespace Prototipo
                 cmd = new SqlCommand("Delete from clientes where id_clientes=" + id_clientes + "", con);
                 cmd.ExecuteNonQuery();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("No se puede eliminar");
             }
@@ -316,7 +432,7 @@ namespace Prototipo
                 cmd = new SqlCommand("Insert Into firma_electronica(id_clientes,fecha_in,fecha_fn) values(" + id_clientes + ",'" + fecha_in + "','" + fecha_fn + "')", con);
                 cmd.ExecuteNonQuery();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 salida = "no se agrego nada";
             }
@@ -385,6 +501,7 @@ namespace Prototipo
             }
             return salida;
         }
+
         public void alerta_Fe(DataGridView dgv)
         {
             try
@@ -414,6 +531,22 @@ namespace Prototipo
                 MessageBox.Show("no se encontro fecha proxima" + ex.ToString());
             }
         }
+
+        public int noty_Fe(int id_clientes)
+        {
+            int id = 0;
+            try
+            {
+                cmd = new SqlCommand("Select id_clientes from firma_electronica where DATEDIFF(day, GetDate(), fecha_fn) >= 1", con);
+                id = Convert.ToInt32(cmd.ExecuteScalar());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo consultar" + ex.ToString());
+            }
+            return id;
+        }
+
         #endregion
         #region sello digital
         /*-------------------------------------sello digital------------------------------------------------------------------*/
@@ -426,7 +559,7 @@ namespace Prototipo
                 cmd = new SqlCommand("Insert Into sello_digital(id_clientes,fecha_in,fecha_fn) values(" + id_clientes + ",'" + fecha_in + "','" + fecha_fn + "')", con);
                 cmd.ExecuteNonQuery();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 salida = "no se agrego nada";
             }
@@ -501,7 +634,7 @@ namespace Prototipo
         {
             try
             {
-                da = new SqlDataAdapter("Select * from sello_digital where DATEDIFF(day, GetDate(), fecha_fn) <= 1", con);
+                da = new SqlDataAdapter("Select * from sello_digital where DATEDIFF(day, GetDate(), fecha_fn) >= 1", con);
                 dt = new DataTable();
                 da.Fill(dt);
                 dgv.DataSource = dt;
@@ -516,7 +649,7 @@ namespace Prototipo
         {
             try
             {
-                da = new SqlDataAdapter("Select * from sello_digital where DATEDIFF(day, GetDate(), fecha_fn) >= 1", con);
+                da = new SqlDataAdapter("Select * from sello_digital where DATEDIFF(day, GetDate(), fecha_fn) <= 1", con);
                 dt = new DataTable();
                 da.Fill(dt);
                 dgv.DataSource = dt;
@@ -525,6 +658,21 @@ namespace Prototipo
             {
                 MessageBox.Show("no se encontro fecha proxima" + ex.ToString());
             }
+        }
+
+        public int noty_Sd(int id_clientes)
+        {
+            int id = 0;
+            try
+            {
+                cmd = new SqlCommand("Select id_clientes from sello_digital where DATEDIFF(day, GetDate(), fecha_fn) >= 1", con);
+                id = Convert.ToInt32(cmd.ExecuteScalar());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo consultar" + ex.ToString());
+            }
+            return id;
         }
         #endregion
         #region seguro social
@@ -538,7 +686,7 @@ namespace Prototipo
                 cmd = new SqlCommand("Insert Into seguro_social(id_clientes,fecha_in,fecha_fn) values(" + id_clientes + ",'" + fecha_in + "','" + fecha_fn + "')", con);
                 cmd.ExecuteNonQuery();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 salida = "no se agrego nada";
             }
@@ -613,7 +761,7 @@ namespace Prototipo
         {
             try
             {
-                da = new SqlDataAdapter("Select * from seguro_social where DATEDIFF(day, GetDate(), fecha_fn) <= 1", con);
+                da = new SqlDataAdapter("Select * from seguro_social where DATEDIFF(day, GetDate(), fecha_fn) >= 1", con);
                 dt = new DataTable();
                 da.Fill(dt);
                 dgv.DataSource = dt;
@@ -628,7 +776,7 @@ namespace Prototipo
         {
             try
             {
-                da = new SqlDataAdapter("Select * from seguro_social where DATEDIFF(day, GetDate(), fecha_fn) >= 1", con);
+                da = new SqlDataAdapter("Select * from seguro_social where DATEDIFF(day, GetDate(), fecha_fn) <= 1", con);
                 dt = new DataTable();
                 da.Fill(dt);
                 dgv.DataSource = dt;
@@ -637,6 +785,21 @@ namespace Prototipo
             {
                 MessageBox.Show("no se encontro fecha proxima" + ex.ToString());
             }
+        }
+
+        public int noty_Ss(int id_clientes)
+        {
+            int id = 0;
+            try
+            {
+                cmd = new SqlCommand("Select id_clientes from seguro_social where DATEDIFF(day, GetDate(), fecha_fn) >= 1", con);
+                id = Convert.ToInt32(cmd.ExecuteScalar());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo consultar" + ex.ToString());
+            }
+            return id;
         }
         #endregion
         #region declaracion fiscal
@@ -650,7 +813,7 @@ namespace Prototipo
                 cmd = new SqlCommand("Insert Into declaracion_fiscal(id_clientes,fecha_in,fecha_fn,declaracion_f,seguro_s,dos_p) values(" + id_clientes + ",'" + fecha_in + "','" + fecha_fn + "','" + declaracion_f + "','" + seguro_s + "','" + dos_p + "')", con);
                 cmd.ExecuteNonQuery();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 salida = "no se agrego nada";
             }
@@ -749,6 +912,64 @@ namespace Prototipo
             {
                 MessageBox.Show("no se encontro fecha proxima" + ex.ToString());
             }
+        }
+
+        public void correo_Df(DataGridView dgv)
+        {
+            try
+            {
+                da = new SqlDataAdapter("Select * from declaracion_fiscal where DATEDIFF(day, GetDate(), declaracion_f) >= 1", con);
+                dt = new DataTable();
+                da.Fill(dt);
+                dgv.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("no se encontro fecha proxima" + ex.ToString());
+            }
+        }
+
+        public string correo_Dfx(string correo_cl, int id_clientes)
+        {
+            try
+            {
+                cmd = new SqlCommand("Select correo_cl from clientes where id_clientes =" + id_clientes +"", con);
+                correo_cl = Convert.ToString(cmd.ExecuteScalar());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo consultar xd" + ex.ToString());
+            }
+            return correo_cl;
+        }
+
+        public string correo_Dfy(string correo_cl, int id_clientes, string nombre_cl)
+        {
+            try
+            {
+                cmd = new SqlCommand("Select nombre_cl from clientes where id_clientes =" + id_clientes + "", con);
+                nombre_cl = Convert.ToString(cmd.ExecuteScalar());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo consultar xd" + ex.ToString());
+            }
+            return nombre_cl;
+        }
+
+        public int noty_Df(int id_clientes)
+        {
+            int id = 0;
+            try
+            {
+                cmd = new SqlCommand("Select id_clientes from declaracion_fiscal where DATEDIFF(day, GetDate(), fecha_fn) >= 1", con);
+                id = Convert.ToInt32(cmd.ExecuteScalar());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo consultar" + ex.ToString());
+            }
+            return id;
         }
     }
     #endregion

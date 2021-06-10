@@ -20,17 +20,17 @@ namespace Prototipo {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("DeclaracionDS")]
+    [global::System.Xml.Serialization.XmlRootAttribute("SelloDataSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class DeclaracionDS : global::System.Data.DataSet {
+    public partial class SelloDataSet : global::System.Data.DataSet {
         
-        private declaracion_fiscalDataTable tabledeclaracion_fiscal;
+        private sello_digitalDataTable tablesello_digital;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public DeclaracionDS() {
+        public SelloDataSet() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace Prototipo {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected DeclaracionDS(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected SelloDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace Prototipo {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["declaracion_fiscal"] != null)) {
-                    base.Tables.Add(new declaracion_fiscalDataTable(ds.Tables["declaracion_fiscal"]));
+                if ((ds.Tables["sello_digital"] != null)) {
+                    base.Tables.Add(new sello_digitalDataTable(ds.Tables["sello_digital"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace Prototipo {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public declaracion_fiscalDataTable declaracion_fiscal {
+        public sello_digitalDataTable sello_digital {
             get {
-                return this.tabledeclaracion_fiscal;
+                return this.tablesello_digital;
             }
         }
         
@@ -127,7 +127,7 @@ namespace Prototipo {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            DeclaracionDS cln = ((DeclaracionDS)(base.Clone()));
+            SelloDataSet cln = ((SelloDataSet)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace Prototipo {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["declaracion_fiscal"] != null)) {
-                    base.Tables.Add(new declaracion_fiscalDataTable(ds.Tables["declaracion_fiscal"]));
+                if ((ds.Tables["sello_digital"] != null)) {
+                    base.Tables.Add(new sello_digitalDataTable(ds.Tables["sello_digital"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace Prototipo {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tabledeclaracion_fiscal = ((declaracion_fiscalDataTable)(base.Tables["declaracion_fiscal"]));
+            this.tablesello_digital = ((sello_digitalDataTable)(base.Tables["sello_digital"]));
             if ((initTable == true)) {
-                if ((this.tabledeclaracion_fiscal != null)) {
-                    this.tabledeclaracion_fiscal.InitVars();
+                if ((this.tablesello_digital != null)) {
+                    this.tablesello_digital.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace Prototipo {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "DeclaracionDS";
+            this.DataSetName = "SelloDataSet";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/DeclaracionDS.xsd";
+            this.Namespace = "http://tempuri.org/SelloDataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tabledeclaracion_fiscal = new declaracion_fiscalDataTable();
-            base.Tables.Add(this.tabledeclaracion_fiscal);
+            this.tablesello_digital = new sello_digitalDataTable();
+            base.Tables.Add(this.tablesello_digital);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializedeclaracion_fiscal() {
+        private bool ShouldSerializesello_digital() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace Prototipo {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            DeclaracionDS ds = new DeclaracionDS();
+            SelloDataSet ds = new SelloDataSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,14 +270,14 @@ namespace Prototipo {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void declaracion_fiscalRowChangeEventHandler(object sender, declaracion_fiscalRowChangeEvent e);
+        public delegate void sello_digitalRowChangeEventHandler(object sender, sello_digitalRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class declaracion_fiscalDataTable : global::System.Data.TypedTableBase<declaracion_fiscalRow> {
+        public partial class sello_digitalDataTable : global::System.Data.TypedTableBase<sello_digitalRow> {
             
             private global::System.Data.DataColumn columnid_clientes;
             
@@ -285,16 +285,10 @@ namespace Prototipo {
             
             private global::System.Data.DataColumn columnfecha_fn;
             
-            private global::System.Data.DataColumn columndeclaracion_f;
-            
-            private global::System.Data.DataColumn columnseguro_s;
-            
-            private global::System.Data.DataColumn columndos_p;
-            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public declaracion_fiscalDataTable() {
-                this.TableName = "declaracion_fiscal";
+            public sello_digitalDataTable() {
+                this.TableName = "sello_digital";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -302,7 +296,7 @@ namespace Prototipo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal declaracion_fiscalDataTable(global::System.Data.DataTable table) {
+            internal sello_digitalDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -319,7 +313,7 @@ namespace Prototipo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected declaracion_fiscalDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected sello_digitalDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -350,30 +344,6 @@ namespace Prototipo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn declaracion_fColumn {
-                get {
-                    return this.columndeclaracion_f;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn seguro_sColumn {
-                get {
-                    return this.columnseguro_s;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn dos_pColumn {
-                get {
-                    return this.columndos_p;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -383,50 +353,47 @@ namespace Prototipo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public declaracion_fiscalRow this[int index] {
+            public sello_digitalRow this[int index] {
                 get {
-                    return ((declaracion_fiscalRow)(this.Rows[index]));
+                    return ((sello_digitalRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event declaracion_fiscalRowChangeEventHandler declaracion_fiscalRowChanging;
+            public event sello_digitalRowChangeEventHandler sello_digitalRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event declaracion_fiscalRowChangeEventHandler declaracion_fiscalRowChanged;
+            public event sello_digitalRowChangeEventHandler sello_digitalRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event declaracion_fiscalRowChangeEventHandler declaracion_fiscalRowDeleting;
+            public event sello_digitalRowChangeEventHandler sello_digitalRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event declaracion_fiscalRowChangeEventHandler declaracion_fiscalRowDeleted;
+            public event sello_digitalRowChangeEventHandler sello_digitalRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Adddeclaracion_fiscalRow(declaracion_fiscalRow row) {
+            public void Addsello_digitalRow(sello_digitalRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public declaracion_fiscalRow Adddeclaracion_fiscalRow(int id_clientes, System.DateTime fecha_in, System.DateTime fecha_fn, System.DateTime declaracion_f, System.DateTime seguro_s, System.DateTime dos_p) {
-                declaracion_fiscalRow rowdeclaracion_fiscalRow = ((declaracion_fiscalRow)(this.NewRow()));
+            public sello_digitalRow Addsello_digitalRow(int id_clientes, System.DateTime fecha_in, System.DateTime fecha_fn) {
+                sello_digitalRow rowsello_digitalRow = ((sello_digitalRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id_clientes,
                         fecha_in,
-                        fecha_fn,
-                        declaracion_f,
-                        seguro_s,
-                        dos_p};
-                rowdeclaracion_fiscalRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowdeclaracion_fiscalRow);
-                return rowdeclaracion_fiscalRow;
+                        fecha_fn};
+                rowsello_digitalRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowsello_digitalRow);
+                return rowsello_digitalRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                declaracion_fiscalDataTable cln = ((declaracion_fiscalDataTable)(base.Clone()));
+                sello_digitalDataTable cln = ((sello_digitalDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -434,7 +401,7 @@ namespace Prototipo {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new declaracion_fiscalDataTable();
+                return new sello_digitalDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -443,9 +410,6 @@ namespace Prototipo {
                 this.columnid_clientes = base.Columns["id_clientes"];
                 this.columnfecha_in = base.Columns["fecha_in"];
                 this.columnfecha_fn = base.Columns["fecha_fn"];
-                this.columndeclaracion_f = base.Columns["declaracion_f"];
-                this.columnseguro_s = base.Columns["seguro_s"];
-                this.columndos_p = base.Columns["dos_p"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -457,39 +421,33 @@ namespace Prototipo {
                 base.Columns.Add(this.columnfecha_in);
                 this.columnfecha_fn = new global::System.Data.DataColumn("fecha_fn", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnfecha_fn);
-                this.columndeclaracion_f = new global::System.Data.DataColumn("declaracion_f", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndeclaracion_f);
-                this.columnseguro_s = new global::System.Data.DataColumn("seguro_s", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnseguro_s);
-                this.columndos_p = new global::System.Data.DataColumn("dos_p", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndos_p);
                 this.columnid_clientes.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public declaracion_fiscalRow Newdeclaracion_fiscalRow() {
-                return ((declaracion_fiscalRow)(this.NewRow()));
+            public sello_digitalRow Newsello_digitalRow() {
+                return ((sello_digitalRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new declaracion_fiscalRow(builder);
+                return new sello_digitalRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(declaracion_fiscalRow);
+                return typeof(sello_digitalRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.declaracion_fiscalRowChanged != null)) {
-                    this.declaracion_fiscalRowChanged(this, new declaracion_fiscalRowChangeEvent(((declaracion_fiscalRow)(e.Row)), e.Action));
+                if ((this.sello_digitalRowChanged != null)) {
+                    this.sello_digitalRowChanged(this, new sello_digitalRowChangeEvent(((sello_digitalRow)(e.Row)), e.Action));
                 }
             }
             
@@ -497,8 +455,8 @@ namespace Prototipo {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.declaracion_fiscalRowChanging != null)) {
-                    this.declaracion_fiscalRowChanging(this, new declaracion_fiscalRowChangeEvent(((declaracion_fiscalRow)(e.Row)), e.Action));
+                if ((this.sello_digitalRowChanging != null)) {
+                    this.sello_digitalRowChanging(this, new sello_digitalRowChangeEvent(((sello_digitalRow)(e.Row)), e.Action));
                 }
             }
             
@@ -506,8 +464,8 @@ namespace Prototipo {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.declaracion_fiscalRowDeleted != null)) {
-                    this.declaracion_fiscalRowDeleted(this, new declaracion_fiscalRowChangeEvent(((declaracion_fiscalRow)(e.Row)), e.Action));
+                if ((this.sello_digitalRowDeleted != null)) {
+                    this.sello_digitalRowDeleted(this, new sello_digitalRowChangeEvent(((sello_digitalRow)(e.Row)), e.Action));
                 }
             }
             
@@ -515,14 +473,14 @@ namespace Prototipo {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.declaracion_fiscalRowDeleting != null)) {
-                    this.declaracion_fiscalRowDeleting(this, new declaracion_fiscalRowChangeEvent(((declaracion_fiscalRow)(e.Row)), e.Action));
+                if ((this.sello_digitalRowDeleting != null)) {
+                    this.sello_digitalRowDeleting(this, new sello_digitalRowChangeEvent(((sello_digitalRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Removedeclaracion_fiscalRow(declaracion_fiscalRow row) {
+            public void Removesello_digitalRow(sello_digitalRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -531,7 +489,7 @@ namespace Prototipo {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DeclaracionDS ds = new DeclaracionDS();
+                SelloDataSet ds = new SelloDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -549,7 +507,7 @@ namespace Prototipo {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "declaracion_fiscalDataTable";
+                attribute2.FixedValue = "sello_digitalDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -593,25 +551,25 @@ namespace Prototipo {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class declaracion_fiscalRow : global::System.Data.DataRow {
+        public partial class sello_digitalRow : global::System.Data.DataRow {
             
-            private declaracion_fiscalDataTable tabledeclaracion_fiscal;
+            private sello_digitalDataTable tablesello_digital;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal declaracion_fiscalRow(global::System.Data.DataRowBuilder rb) : 
+            internal sello_digitalRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tabledeclaracion_fiscal = ((declaracion_fiscalDataTable)(this.Table));
+                this.tablesello_digital = ((sello_digitalDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int id_clientes {
                 get {
-                    return ((int)(this[this.tabledeclaracion_fiscal.id_clientesColumn]));
+                    return ((int)(this[this.tablesello_digital.id_clientesColumn]));
                 }
                 set {
-                    this[this.tabledeclaracion_fiscal.id_clientesColumn] = value;
+                    this[this.tablesello_digital.id_clientesColumn] = value;
                 }
             }
             
@@ -620,14 +578,14 @@ namespace Prototipo {
             public System.DateTime fecha_in {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tabledeclaracion_fiscal.fecha_inColumn]));
+                        return ((global::System.DateTime)(this[this.tablesello_digital.fecha_inColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fecha_in\' de la tabla \'declaracion_fiscal\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fecha_in\' de la tabla \'sello_digital\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabledeclaracion_fiscal.fecha_inColumn] = value;
+                    this[this.tablesello_digital.fecha_inColumn] = value;
                 }
             }
             
@@ -636,124 +594,39 @@ namespace Prototipo {
             public System.DateTime fecha_fn {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tabledeclaracion_fiscal.fecha_fnColumn]));
+                        return ((global::System.DateTime)(this[this.tablesello_digital.fecha_fnColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fecha_fn\' de la tabla \'declaracion_fiscal\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fecha_fn\' de la tabla \'sello_digital\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabledeclaracion_fiscal.fecha_fnColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime declaracion_f {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tabledeclaracion_fiscal.declaracion_fColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'declaracion_f\' de la tabla \'declaracion_fiscal\' es DBNull" +
-                                ".", e);
-                    }
-                }
-                set {
-                    this[this.tabledeclaracion_fiscal.declaracion_fColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime seguro_s {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tabledeclaracion_fiscal.seguro_sColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'seguro_s\' de la tabla \'declaracion_fiscal\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabledeclaracion_fiscal.seguro_sColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime dos_p {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tabledeclaracion_fiscal.dos_pColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'dos_p\' de la tabla \'declaracion_fiscal\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabledeclaracion_fiscal.dos_pColumn] = value;
+                    this[this.tablesello_digital.fecha_fnColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Isfecha_inNull() {
-                return this.IsNull(this.tabledeclaracion_fiscal.fecha_inColumn);
+                return this.IsNull(this.tablesello_digital.fecha_inColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setfecha_inNull() {
-                this[this.tabledeclaracion_fiscal.fecha_inColumn] = global::System.Convert.DBNull;
+                this[this.tablesello_digital.fecha_inColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Isfecha_fnNull() {
-                return this.IsNull(this.tabledeclaracion_fiscal.fecha_fnColumn);
+                return this.IsNull(this.tablesello_digital.fecha_fnColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setfecha_fnNull() {
-                this[this.tabledeclaracion_fiscal.fecha_fnColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Isdeclaracion_fNull() {
-                return this.IsNull(this.tabledeclaracion_fiscal.declaracion_fColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setdeclaracion_fNull() {
-                this[this.tabledeclaracion_fiscal.declaracion_fColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Isseguro_sNull() {
-                return this.IsNull(this.tabledeclaracion_fiscal.seguro_sColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setseguro_sNull() {
-                this[this.tabledeclaracion_fiscal.seguro_sColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Isdos_pNull() {
-                return this.IsNull(this.tabledeclaracion_fiscal.dos_pColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setdos_pNull() {
-                this[this.tabledeclaracion_fiscal.dos_pColumn] = global::System.Convert.DBNull;
+                this[this.tablesello_digital.fecha_fnColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -761,22 +634,22 @@ namespace Prototipo {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class declaracion_fiscalRowChangeEvent : global::System.EventArgs {
+        public class sello_digitalRowChangeEvent : global::System.EventArgs {
             
-            private declaracion_fiscalRow eventRow;
+            private sello_digitalRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public declaracion_fiscalRowChangeEvent(declaracion_fiscalRow row, global::System.Data.DataRowAction action) {
+            public sello_digitalRowChangeEvent(sello_digitalRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public declaracion_fiscalRow Row {
+            public sello_digitalRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -792,7 +665,7 @@ namespace Prototipo {
         }
     }
 }
-namespace Prototipo.DeclaracionDSTableAdapters {
+namespace Prototipo.SelloDataSetTableAdapters {
     
     
     /// <summary>
@@ -804,7 +677,7 @@ namespace Prototipo.DeclaracionDSTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class declaracion_fiscalTableAdapter : global::System.ComponentModel.Component {
+    public partial class sello_digitalTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -818,7 +691,7 @@ namespace Prototipo.DeclaracionDSTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public declaracion_fiscalTableAdapter() {
+        public sello_digitalTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -915,33 +788,26 @@ namespace Prototipo.DeclaracionDSTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "declaracion_fiscal";
+            tableMapping.DataSetTable = "sello_digital";
             tableMapping.ColumnMappings.Add("id_clientes", "id_clientes");
             tableMapping.ColumnMappings.Add("fecha_in", "fecha_in");
             tableMapping.ColumnMappings.Add("fecha_fn", "fecha_fn");
-            tableMapping.ColumnMappings.Add("declaracion_f", "declaracion_f");
-            tableMapping.ColumnMappings.Add("seguro_s", "seguro_s");
-            tableMapping.ColumnMappings.Add("dos_p", "dos_p");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[declaracion_fiscal] ([id_clientes], [fecha_in], [fecha_fn], [d" +
-                "eclaracion_f], [seguro_s], [dos_p]) VALUES (@id_clientes, @fecha_in, @fecha_fn, " +
-                "@declaracion_f, @seguro_s, @dos_p)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[sello_digital] ([id_clientes], [fecha_in], [fecha_fn]) VALUES " +
+                "(@id_clientes, @fecha_in, @fecha_fn)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_clientes", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_clientes", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fecha_in", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fecha_in", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fecha_fn", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fecha_fn", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@declaracion_f", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "declaracion_f", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@seguro_s", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "seguro_s", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dos_p", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dos_p", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Prototipo.Properties.Settings.Default.DPS2_Clientes;
+            this._connection.ConnectionString = global::Prototipo.Properties.Settings.Default.MiguelitoRemoto;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -950,8 +816,7 @@ namespace Prototipo.DeclaracionDSTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT id_clientes, fecha_in, fecha_fn, declaracion_f, seguro_s, dos_p FROM dbo.d" +
-                "eclaracion_fiscal";
+            this._commandCollection[0].CommandText = "SELECT id_clientes, fecha_in, fecha_fn FROM dbo.sello_digital";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -959,7 +824,7 @@ namespace Prototipo.DeclaracionDSTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DeclaracionDS.declaracion_fiscalDataTable dataTable) {
+        public virtual int Fill(SelloDataSet.sello_digitalDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -972,9 +837,9 @@ namespace Prototipo.DeclaracionDSTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DeclaracionDS.declaracion_fiscalDataTable GetData() {
+        public virtual SelloDataSet.sello_digitalDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DeclaracionDS.declaracion_fiscalDataTable dataTable = new DeclaracionDS.declaracion_fiscalDataTable();
+            SelloDataSet.sello_digitalDataTable dataTable = new SelloDataSet.sello_digitalDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -982,15 +847,15 @@ namespace Prototipo.DeclaracionDSTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DeclaracionDS.declaracion_fiscalDataTable dataTable) {
+        public virtual int Update(SelloDataSet.sello_digitalDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DeclaracionDS dataSet) {
-            return this.Adapter.Update(dataSet, "declaracion_fiscal");
+        public virtual int Update(SelloDataSet dataSet) {
+            return this.Adapter.Update(dataSet, "sello_digital");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1012,7 +877,7 @@ namespace Prototipo.DeclaracionDSTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int id_clientes, global::System.Nullable<global::System.DateTime> fecha_in, global::System.Nullable<global::System.DateTime> fecha_fn, global::System.Nullable<global::System.DateTime> declaracion_f, global::System.Nullable<global::System.DateTime> seguro_s, global::System.Nullable<global::System.DateTime> dos_p) {
+        public virtual int Insert(int id_clientes, global::System.Nullable<global::System.DateTime> fecha_in, global::System.Nullable<global::System.DateTime> fecha_fn) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(id_clientes));
             if ((fecha_in.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(fecha_in.Value));
@@ -1025,24 +890,6 @@ namespace Prototipo.DeclaracionDSTableAdapters {
             }
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            if ((declaracion_f.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(declaracion_f.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            if ((seguro_s.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(seguro_s.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            if ((dos_p.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((System.DateTime)(dos_p.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1073,7 +920,7 @@ namespace Prototipo.DeclaracionDSTableAdapters {
         
         private UpdateOrderOption _updateOrder;
         
-        private declaracion_fiscalTableAdapter _declaracion_fiscalTableAdapter;
+        private sello_digitalTableAdapter _sello_digitalTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -1095,12 +942,12 @@ namespace Prototipo.DeclaracionDSTableAdapters {
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public declaracion_fiscalTableAdapter declaracion_fiscalTableAdapter {
+        public sello_digitalTableAdapter sello_digitalTableAdapter {
             get {
-                return this._declaracion_fiscalTableAdapter;
+                return this._sello_digitalTableAdapter;
             }
             set {
-                this._declaracion_fiscalTableAdapter = value;
+                this._sello_digitalTableAdapter = value;
             }
         }
         
@@ -1123,9 +970,9 @@ namespace Prototipo.DeclaracionDSTableAdapters {
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._declaracion_fiscalTableAdapter != null) 
-                            && (this._declaracion_fiscalTableAdapter.Connection != null))) {
-                    return this._declaracion_fiscalTableAdapter.Connection;
+                if (((this._sello_digitalTableAdapter != null) 
+                            && (this._sello_digitalTableAdapter.Connection != null))) {
+                    return this._sello_digitalTableAdapter.Connection;
                 }
                 return null;
             }
@@ -1140,7 +987,7 @@ namespace Prototipo.DeclaracionDSTableAdapters {
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._declaracion_fiscalTableAdapter != null)) {
+                if ((this._sello_digitalTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -1152,14 +999,14 @@ namespace Prototipo.DeclaracionDSTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateUpdatedRows(DeclaracionDS dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(SelloDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._declaracion_fiscalTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.declaracion_fiscal.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._sello_digitalTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.sello_digital.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._declaracion_fiscalTableAdapter.Update(updatedRows));
+                    result = (result + this._sello_digitalTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -1171,13 +1018,13 @@ namespace Prototipo.DeclaracionDSTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateInsertedRows(DeclaracionDS dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(SelloDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._declaracion_fiscalTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.declaracion_fiscal.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._sello_digitalTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.sello_digital.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._declaracion_fiscalTableAdapter.Update(addedRows));
+                    result = (result + this._sello_digitalTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -1189,13 +1036,13 @@ namespace Prototipo.DeclaracionDSTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateDeletedRows(DeclaracionDS dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(SelloDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._declaracion_fiscalTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.declaracion_fiscal.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._sello_digitalTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.sello_digital.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._declaracion_fiscalTableAdapter.Update(deletedRows));
+                    result = (result + this._sello_digitalTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -1231,15 +1078,15 @@ namespace Prototipo.DeclaracionDSTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public virtual int UpdateAll(DeclaracionDS dataSet) {
+        public virtual int UpdateAll(SelloDataSet dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._declaracion_fiscalTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._declaracion_fiscalTableAdapter.Connection) == false))) {
+            if (((this._sello_digitalTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._sello_digitalTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("Todos los TableAdapters administrados por un TableAdapterManager deben usar la mi" +
                         "sma cadena de conexión.");
             }
@@ -1275,13 +1122,13 @@ namespace Prototipo.DeclaracionDSTableAdapters {
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._declaracion_fiscalTableAdapter != null)) {
-                    revertConnections.Add(this._declaracion_fiscalTableAdapter, this._declaracion_fiscalTableAdapter.Connection);
-                    this._declaracion_fiscalTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._declaracion_fiscalTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._declaracion_fiscalTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._declaracion_fiscalTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._declaracion_fiscalTableAdapter.Adapter);
+                if ((this._sello_digitalTableAdapter != null)) {
+                    revertConnections.Add(this._sello_digitalTableAdapter, this._sello_digitalTableAdapter.Connection);
+                    this._sello_digitalTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._sello_digitalTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._sello_digitalTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._sello_digitalTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._sello_digitalTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -1342,9 +1189,9 @@ namespace Prototipo.DeclaracionDSTableAdapters {
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._declaracion_fiscalTableAdapter != null)) {
-                    this._declaracion_fiscalTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._declaracion_fiscalTableAdapter]));
-                    this._declaracion_fiscalTableAdapter.Transaction = null;
+                if ((this._sello_digitalTableAdapter != null)) {
+                    this._sello_digitalTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._sello_digitalTableAdapter]));
+                    this._sello_digitalTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];
